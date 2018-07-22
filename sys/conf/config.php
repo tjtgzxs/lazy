@@ -10,5 +10,5 @@ return [
     'URI_MODEL'=>'common',
     'EXT'=>'.php',
     'DEFAULT_CONTROLLER'=>'Index',
-    'DEFAULT_ACTION'=>'IndexAction'
+    'DEFAULT_ACTION'=>'Index'
 ];

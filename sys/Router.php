@@ -28,8 +28,10 @@ class Router
     }
 
     protected static function parseCommon(){
-        $router=$_GET['r'];
-        $array=explode('/',$router);
+        if(!empty($_GET['r'])){
+            $router=$_GET['r'];
+            $array=explode('/',$router);
+        }
         self::$controller=empty($array[0])? DEFAULT_CONTROLLER:ucfirst($array[0]);
         self::$action=empty($array[1])?DEFAULT_ACTION:ucfirst($array[1]);
     }
