@@ -21,7 +21,7 @@ if(ENVIRONMENT=='development'){
 $base=rtrim(str_replace('\\',DIRECTORY_SEPARATOR,__DIR__),DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 
 define('BASE',$base);
-define('SYS',$base.'sys'.DIRECTORY_SEPARATOR);
+define('SYS',$base.'Lazy'.DIRECTORY_SEPARATOR);
 define('APP',$base.'app'.DIRECTORY_SEPARATOR);
 define('CONF',SYS.'conf'.DIRECTORY_SEPARATOR);
 define('COMMON',SYS.'common'.DIRECTORY_SEPARATOR);

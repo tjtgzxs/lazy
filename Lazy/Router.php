@@ -37,6 +37,7 @@ class Router
     }
 
     protected static function boot(){
+        self::defineConst();
         $controller='Controller\\'.self::$controller;
         $action=self::$action."Action";
         $boot=new $controller();
@@ -44,5 +45,10 @@ class Router
             $boot,
             $action
         ]);
+    }
+
+    public static function defineConst(){
+        define('CONTROLLER',self::$controller);
+        define('ACTION',self::$action);
     }
 }

@@ -15,12 +15,17 @@ class Loader
     public  static function register($class){
         $class=rtrim(str_replace('\\',DIRECTORY_SEPARATOR,$class),'\\');
         $file=$class.EXT;
+
         if(file_exists(SYS.$file)){
             require SYS.$file;
             return;
         }
         if(file_exists(APP.$file)){
             require APP.$file;
+            return;
+        }
+        if(file_exists(BASE.$file)){
+            require BASE.$file;
             return;
         }
     }

@@ -9,6 +9,7 @@
 return [
     'URI_MODEL'=>'common',
     'EXT'=>'.php',
+    'VEXT'=>'.html',
     'DEFAULT_CONTROLLER'=>'Index',
     'DEFAULT_ACTION'=>'Index'
 ];

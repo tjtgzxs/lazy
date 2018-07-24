@@ -6,10 +6,11 @@
  * Time: 19:43
  */
 namespace Controller;
-class Index
+use Lazy\BaseController;
+class Index extends BaseController
 {
     public function IndexAction(){
-        echo 1111;
+       $this->render(['k'=>1],'test');
     }
 
 }
