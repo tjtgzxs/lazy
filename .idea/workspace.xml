@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d17cf14-5df2-4ac0-a60d-380795b52ab6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Lazy/BaseView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controller/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/BaseView.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/Loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lazy/Loader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lazy/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/common/CommonFunction.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lazy/common/CommonFunction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/conf/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lazy/conf/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/lazy.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lazy/lazy.php" afterDir="false" />
-    </list>
+    <list default="true" id="0d17cf14-5df2-4ac0-a60d-380795b52ab6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +58,8 @@
       <file leaf-file-name="BaseView.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Lazy/BaseView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            <state relative-caret-position="280">
+              <caret line="18" selection-start-line="18" selection-end-line="22" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -152,9 +141,9 @@
         <option value="$PROJECT_DIR$/sys/BaseController.php" />
         <option value="$PROJECT_DIR$/sys/Loader.php" />
         <option value="$PROJECT_DIR$/Lazy/Loader.php" />
-        <option value="$PROJECT_DIR$/Lazy/BaseView.php" />
         <option value="$PROJECT_DIR$/app/View/test.html" />
         <option value="$PROJECT_DIR$/app/View/Index/test.html" />
+        <option value="$PROJECT_DIR$/Lazy/BaseView.php" />
       </list>
     </option>
   </component>
@@ -262,7 +251,7 @@
       <updated>1532233863232</updated>
       <workItem from="1532233865299" duration="9995000" />
       <workItem from="1532350138278" duration="699000" />
-      <workItem from="1532438577746" duration="4006000" />
+      <workItem from="1532438577746" duration="4494000" />
     </task>
     <task id="LOCAL-00001" summary="add BaseView">
       <created>1532352169476</created>
@@ -275,7 +264,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14700000" />
+    <option name="totallyTimeSpent" value="15188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -471,8 +460,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Lazy/BaseView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        <state relative-caret-position="280">
+          <caret line="18" selection-start-line="18" selection-end-line="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
