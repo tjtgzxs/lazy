@@ -25,5 +25,6 @@ define('SYS',$base.'Lazy'.DIRECTORY_SEPARATOR);
 define('APP',$base.'app'.DIRECTORY_SEPARATOR);
 define('CONF',SYS.'conf'.DIRECTORY_SEPARATOR);
 define('COMMON',SYS.'common'.DIRECTORY_SEPARATOR);
-
+define('EXTEND',BASE.'extend'.DIRECTORY_SEPARATOR);
+define('SMARTY',EXTEND.'smarty'.DIRECTORY_SEPARATOR);
 require SYS.'lazy.php';
