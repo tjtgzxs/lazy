@@ -10,7 +10,7 @@ use Lazy\BaseController;
 class Index extends BaseController
 {
     public function IndexAction(){
-       $this->render(['k'=>1],'test');
+       $this->render(['k'=>1]);
     }
 
 }

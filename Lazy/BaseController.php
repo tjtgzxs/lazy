@@ -12,7 +12,7 @@ namespace Lazy;
 class BaseController
 {
     public $view_file='';
-    protected  function render($data=[],$view_file){
+    protected  function render($data=[],$view_file=''){
         BaseView::display($data,$view_file);
     }
 

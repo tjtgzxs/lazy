@@ -12,11 +12,14 @@ namespace Lazy;
 class BaseView
 {
     private  static $template_files;
-    public static function display($data,$view_file){
+    public static function display($data,$view_file=''){
         if(is_array($data)){
             extract($data);
         }
-
+        if(empty($view_file)){
+            $view_file=strtolower(ACTION);
+        }
+        //start to render
         ob_start();
         ob_implicit_flush(0);
         include APP."View".DIRECTORY_SEPARATOR.CONTROLLER.DIRECTORY_SEPARATOR.$view_file.VEXT;
