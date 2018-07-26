@@ -50,7 +50,7 @@ class BaseModel
         if(!empty($where)){
             $sql.="WHERE ".$where;
         }
-        
+
 
 
     }
