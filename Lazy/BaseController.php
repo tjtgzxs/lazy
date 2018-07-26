@@ -12,8 +12,17 @@ namespace Lazy;
 class BaseController
 {
     public $view_file='';
-    protected  function render($data=[],$view_file){
-        BaseView::display($data,$view_file);
+    public function __construct()
+    {
+       BaseView::init();
+    }
+
+    protected function assign($key,$value=null){
+        BaseView::assign($key,$value);
+    }
+    protected  function render($view_file=''){
+
+                BaseView::display($view_file);
     }
 
 }

@@ -9,8 +9,15 @@ namespace Controller;
 use Lazy\BaseController;
 class Index extends BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function IndexAction(){
-       $this->render(['k'=>1],'test');
+         $this->assign('k',1);
+         $this->render();
+//       $this->render(['k'=>1]);
     }
 
 }
