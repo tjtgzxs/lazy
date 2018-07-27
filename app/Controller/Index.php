@@ -7,6 +7,8 @@
  */
 namespace Controller;
 use Lazy\BaseController;
+use Lazy\BaseModel;
+
 class Index extends BaseController
 {
     public function __construct()
@@ -15,7 +17,8 @@ class Index extends BaseController
     }
 
     public function IndexAction(){
-         $this->assign('k',1);
+         $model=new \Model\Index();
+         $this->assign('k',$model->index());
          $this->render();
 //       $this->render(['k'=>1]);
     }
