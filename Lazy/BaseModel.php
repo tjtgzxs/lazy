@@ -39,23 +39,55 @@ class BaseModel
        $stmt->execute();
        return $stmt->rowCount();
     }
-    public function generateSql($table,$data="*",$where=null,$start=null,$limit=null,$order=null){
+
+    /**
+     * generate SELECT SQL
+     * @param $table
+     * @param string $data
+     * @param null $where
+     * @param null $start
+     * @param null $limit
+     * @param null $order
+     * @return string
+     */
+    public function generateSelectSql($table,$data="*",$where=null,$start=null,$limit=null,$order=null){
+        //generate data which you want to fetch
         if(is_array($data)){
             $data=implode(',',$data);
         }
+        //generate which data
         if(is_array($where)){
             $where=implode(' and ',$where);
         }
         $sql=" SELECT {$data} FROM {$table} ";
         if(!empty($where)){
-            $sql.="WHERE ".$where;
+            $sql.=" WHERE ".$where;
         }
-
-
-
+        //generate data which limit
+        if(!empty($start)||!empty($limit)){
+            if(empty($start)){
+                $sql.=" LIMIT $limit";
+            }else{
+                $sql.=" LIMIT $start,$limit";
+            }
+        }
+        //generate order sql
+        if(!empty($order)){
+            if(is_array($order)){
+                foreach ($order as $k=>$v){
+                    $sql.=" ORDER $k $v";
+                }
+            }else{
+                $sql.="ORDER $order";
+            }
+        }
+        return $sql;
     }
     public function fetchAll($table,$data="*",$where=null,$start=null,$limit=null,$order=null){
-        $stmt=$this->db->query();
+        $sql=$this->generateSelectSql($table,$data,$where,$start,$limit,$order);
+        $stmt=$this->db->query($sql);
+        $arr=$stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $arr;
     }
 
 }
