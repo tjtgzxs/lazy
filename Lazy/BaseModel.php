@@ -9,7 +9,7 @@
 namespace Lazy;
 
 
-class BaseModel
+class BaseModel extends \PDO
 {
     protected $db;
     public function __construct()
@@ -83,7 +83,18 @@ class BaseModel
         }
         return $sql;
     }
-    public function fetchAll($table,$data="*",$where=null,$start=null,$limit=null,$order=null){
+
+    /**
+     * fetchAll
+     * @param $table
+     * @param string $data
+     * @param null $where
+     * @param null $start
+     * @param null $limit
+     * @param null $order
+     * @return array
+     */
+    public function getAll($table,$data="*",$where=null,$start=null,$limit=null,$order=null){
         $sql=$this->generateSelectSql($table,$data,$where,$start,$limit,$order);
         $stmt=$this->db->query($sql);
         $arr=$stmt->fetchAll(\PDO::FETCH_ASSOC);
