@@ -7,7 +7,7 @@
  */
 namespace Model;
 use Lazy\BaseModel;
-class Index extends BaseModel
+class IndexModel extends BaseModel
 {
     public function index(){
         $result=$this->insert('test',['value'=>'11111']);

@@ -19,7 +19,7 @@ class BaseView
         self::$smarty=new \Smarty();
         self::$smarty->setTemplateDir(APP.'View'.DIRECTORY_SEPARATOR);
         self::$smarty->setCompileDir(CACHE.'smarty_compiled');//定义smarty编译文件的缓存路径
-        self::$smarty->debugging=true;//开启错误控制台
+        self::$smarty->debugging=false;//开启错误控制台
         self::$smarty->caching=true;//开启缓存
         self::$smarty->cache_lifetime=true;//开启缓存生存时间
     }

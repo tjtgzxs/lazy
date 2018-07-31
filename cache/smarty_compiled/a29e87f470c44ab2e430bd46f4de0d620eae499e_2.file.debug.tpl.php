@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-07-25 07:02:34
+/* Smarty version 3.1.32, created on 2018-07-31 08:15:43
   from 'D:\phpStudy\WWW\lazy\extend\smarty\debug.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b58208a81ee80_18884534',
+  'unifunc' => 'content_5b601aaf9e2780_27625138',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b58208a81ee80_18884534 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b601aaf9e2780_27625138 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\phpStudy\\WWW\\lazy\\extend\\smarty\\plugins\\modifier.debug_print_var.php','function'=>'smarty_modifier_debug_print_var',),));
 $_smarty_tpl->smarty->ext->_capture->open($_smarty_tpl, '_smarty_debug', 'debug_output', null);?>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">

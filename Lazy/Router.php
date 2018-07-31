@@ -38,7 +38,7 @@ class Router
 
     protected static function boot(){
         self::defineConst();
-        $controller='Controller\\'.self::$controller;
+        $controller='Controller\\'.self::$controller."Controller";
         $action=self::$action."Action";
         $boot=new $controller();
         call_user_func([

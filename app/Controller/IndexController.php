@@ -7,9 +7,8 @@
  */
 namespace Controller;
 use Lazy\BaseController;
-use Lazy\BaseModel;
-
-class Index extends BaseController
+use Model\IndexModel;
+class IndexController extends BaseController
 {
     public function __construct()
     {
@@ -17,7 +16,8 @@ class Index extends BaseController
     }
 
     public function IndexAction(){
-         $model=new \Model\Index();
+
+         $model=new \Model\IndexModel();
          $this->assign('title','Welcome to Lazy Blog');
          $this->assign('k',2);
          $this->render();
