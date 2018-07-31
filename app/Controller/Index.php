@@ -18,7 +18,8 @@ class Index extends BaseController
 
     public function IndexAction(){
          $model=new \Model\Index();
-         $this->assign('k',$model->index());
+         $this->assign('title','Welcome to Lazy Blog');
+         $this->assign('k',2);
          $this->render();
 //       $this->render(['k'=>1]);
     }
