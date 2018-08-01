@@ -36,7 +36,7 @@ class BaseView
         if(empty($view_file)){
             $view_file=strtolower(ACTION);
         }
-
+        self::$smarty->assign('__IMG__',__IMG__);
         self::$smarty->display(APP."View".DIRECTORY_SEPARATOR.CONTROLLER.DIRECTORY_SEPARATOR.$view_file.VEXT);
 //        //start to render
 //        ob_start();

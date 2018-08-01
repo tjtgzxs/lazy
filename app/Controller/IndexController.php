@@ -18,10 +18,9 @@ class IndexController extends BaseController
     }
 
     public function IndexAction(){
-
-        $redis=new Client();
-        echo phpinfo();die();
-//         $model=new \Model\IndexModel();
+//        $redis=new Client();
+////        echo phpinfo();die();
+////         $model=new \Model\IndexModel();
          $this->assign('title','Welcome to Lazy Blog');
          $this->assign('k',2);
          $this->render();

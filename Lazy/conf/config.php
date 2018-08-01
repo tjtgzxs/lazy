@@ -12,6 +12,7 @@ return [
     'VEXT'=>'.html',
     'DEFAULT_CONTROLLER'=>'Index',
     'DEFAULT_ACTION'=>'Index',
+    '__IMG__'=>'app'.DIRECTORY_SEPARATOR.'View'.DIRECTORY_SEPARATOR.'static'.DIRECTORY_SEPARATOR.'img'.DIRECTORY_SEPARATOR,
     'db'=>[
         'DB_HOST'=>'localhost',
         'DB_USER'=>'homestead',
@@ -19,4 +20,5 @@ return [
         'DB_PREFIX'=>'la',
         'DB_NAME'=>'lazy',
     ],
+
 ];
