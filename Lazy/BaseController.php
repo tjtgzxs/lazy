@@ -21,8 +21,8 @@ class BaseController
         BaseView::assign($key,$value);
     }
     protected  function render($view_file=''){
-
-                BaseView::display($view_file);
+         BaseView::display($view_file);
+         exit();
     }
 
 }
