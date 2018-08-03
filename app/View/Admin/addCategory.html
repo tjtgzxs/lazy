@@ -1,0 +1,33 @@
+{include "static/header.html" title="{$title}"}
+<body>
+{include "Admin/admin_nav.html"}
+<div class="container">
+<form method="post" action="?r=admin/insert">
+    {if isset($id)}
+    <div class="form-group">
+        <label>id:</label>
+        {$id}
+    </div>
+    {/if}
+    <div class="form-group">
+        <label for="select_parent">belong to:</label>
+        <select id="select_parent" class="form-control form-control-sm" name="parent">
+            <option value="0">top</option>
+            {foreach $list as $k=>$item}
+               <option value="{$item.id}" {if isset($pid)&&$item.id==$pid}selected{/if}>{$item.name}</option>
+            {/foreach}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="name">category name:</label>
+        <input type="text" class="form-control" id="name" {if isset($name)} value="{$name}"{/if} aria-describedby="name" name="name" placeholder="Enter category name">
+    </div>
+    {if isset($id)}
+    <input type="hidden" class="form-control" id="id" name="id" value="{$id}">
+    {/if}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{include "static/footer.html"}
+</body>
+</html>

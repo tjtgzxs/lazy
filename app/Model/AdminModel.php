@@ -32,13 +32,21 @@ class AdminModel extends BaseModel
 
     /**
      * get All category List
+     * @param array $where
      * @return bool
      */
-    public function getAllCategory(){
+    public function getAllCategory(array $where=[]){
         $sql=" SELECT * FROM lazy_cate".
-             " WHERE is_del=0";
+             " WHERE is_del=0 ";
+        if(!empty($where)&&is_array($where)){
+            foreach ($where as $k=>$v){
+                $sql.=" AND $k=$v";
+            }
+
+        }
+        $sql.=" ORDER BY id ";
         $smt=$this->db->query($sql);
-        $result=$smt->fetchAll(\PDO::FETCH_COLUMN);
+        $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
         if(!empty($result)){
             return $result;
         }
@@ -51,18 +59,38 @@ class AdminModel extends BaseModel
      * @return array|bool
      */
     public function getCategory($id){
-        $sql=" SELECT * FROM lazy_cate".
-            " WHERE is_del=0";
+        $sql=" SELECT *  FROM lazy_cate".
+            " WHERE is_del=0 AND id={$id}";
         $smt=$this->db->query($sql);
-        $result=$smt->fetchAll(\PDO::FETCH_COLUMN);
+        $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
         if(!empty($result)){
-            return $result;
+            return $result[0];
         }
         return false;
     }
 
+    /**
+     *
+     * @param $arr
+     * @return int
+     */
     public function addCategory($arr){
         $result=$this->insert('lazy_cate',$arr);
+        return $result;
+    }
+
+    public function updateCate($id,$arr,$del=0){
+        if($del==0){
+            $sql=" UPDATE lazy_cate SET parent_id=".$arr['parent_id']." ,name='".$arr['name']."',is_del={$del}".
+                " WHERE id={$id}";
+        }else{
+            $sql=" UPDATE lazy_cate SET is_del={$del}".
+                " WHERE id={$id}";
+        }
+
+        $smt=$this->db->query($sql);
+        $result=$smt->execute();
+
         return $result;
     }
 

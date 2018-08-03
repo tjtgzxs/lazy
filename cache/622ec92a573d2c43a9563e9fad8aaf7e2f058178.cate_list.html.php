@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-03 03:01:38
-  from 'D:\phpStudy\WWW\lazy\app\View\Admin\index.html' */
+/* Smarty version 3.1.32, created on 2018-08-03 09:26:30
+  from 'D:\phpStudy\WWW\lazy\app\View\Admin\cate_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b63c5925ca6c6_42181036',
+  'unifunc' => 'content_5b641fc6dd3104_39917099',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '3b0926f50074a8119786dd5b07e130168cde0aab' => 
+    '6584a2d229bba9cb82dc18c4f1fecee03038a51c' => 
     array (
-      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\index.html',
-      1 => 1533197461,
+      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\cate_list.html',
+      1 => 1533288188,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -30,25 +30,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\admin_nav.html',
-      1 => 1533265296,
+      1 => 1533281514,
       2 => 'file',
     ),
     '11367b371eea48768b2151d04bac0d54ae065700' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\footer.html',
-      1 => 1533021709,
+      1 => 1533286408,
       2 => 'file',
     ),
     'a92825ce6e6cc406087c05ac96926c8505c198dd' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_js.html',
-      1 => 1533026437,
+      1 => 1533287712,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b63c5925ca6c6_42181036 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b641fc6dd3104_39917099 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +56,7 @@ function content_5b63c5925ca6c6_42181036 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="app\View\static\img\logo.jpg">
-    <title>manage</title>
+    <title>category list</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="app/View/static/css/app.css"></head>
 <body>
@@ -72,7 +72,7 @@ function content_5b63c5925ca6c6_42181036 (Smarty_Internal_Template $_smarty_tpl)
                     Category
                 </a>
                 <div class="dropdown-menu" aria-labelledby="MenuLink">
-                    <a class="dropdown-item" href="#">Category List</a>
+                    <a class="dropdown-item" href="?r=admin/CategoryList">Category List</a>
                     <a class="dropdown-item" href="?r=admin/addCategory">Add Category</a>
                 </div>
             </li>
@@ -93,12 +93,39 @@ function content_5b63c5925ca6c6_42181036 (Smarty_Internal_Template $_smarty_tpl)
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-</nav>
-
+</nav>  <a href="?r=admin/addCategory&id=1"><li>PHP</li></a><a onclick="del(1)">delete</a>
+  <a  href="?r=admin/addCategory&id=2">Laravel</a><a onclick="del(2)">delete</a>
+<a href="?r=admin/addCategory&id=4"><li>database</li></a><a onclick="del(4)">delete</a>
+  <a  href="?r=admin/addCategory&id=3">predis</a><a onclick="del(3)">delete</a>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+    function del(id) {
+        var check=confirm('Are you sure delete this category? ');
+        if(check==true){
+            $.ajax({
+                url:"?r=Admin/delete&id="+id,
+                type:"POST",
+                // data:"r=admin/delete&id="+id,
+                dataType:"JSON",
+                async:false,
+                success:function (data) {
+                    if(data.code==0){
+                        alert(data.msg);
+                    }else {
+                        alert(data.msg);
+                        history.go(0);
+                    }
+                }
+            })
+        }
+    }
+</script>
 </body>
 </html><?php }
 }

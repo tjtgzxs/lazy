@@ -1,0 +1,38 @@
+{include 'static/header.html' title="{$title}"}
+<body>
+{include 'Admin/admin_nav.html'}
+ {if isset($list)}
+ {foreach $list as $k=>$v}
+<a href="?r=admin/addCategory&id={$v.id}"><li>{$v.name}</li></a><a onclick="del({$v.id})">delete</a>
+{if isset($v.child)}
+{foreach $v.child as $key=>$value}
+  <a  href="?r=admin/addCategory&id={$value.id}">{$value.name}</a><a onclick="del({$value.id})">delete</a>
+{/foreach}
+{/if}
+{/foreach}
+{/if}
+{include 'static/footer.html'}
+<script type="text/javascript">
+    function del(id) {
+        var check=confirm('Are you sure delete this category? ');
+        if(check==true){
+            $.ajax({
+                url:"?r=Admin/delete&id="+id,
+                type:"POST",
+                // data:"r=admin/delete&id="+id,
+                dataType:"JSON",
+                async:false,
+                success:function (data) {
+                    if(data.code==0){
+                        alert(data.msg);
+                    }else {
+                        alert(data.msg);
+                        history.go(0);
+                    }
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>

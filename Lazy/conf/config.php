@@ -15,9 +15,11 @@ return [
     '__IMG__'=>'app'.DIRECTORY_SEPARATOR.'View'.DIRECTORY_SEPARATOR.'static'.DIRECTORY_SEPARATOR.'img'.DIRECTORY_SEPARATOR,
     'db'=>[
         'DB_HOST'=>'localhost',
-        'DB_USER'=>'homestead',
-        'DB_PASS'=>'secret',
-        'DB_PREFIX'=>'la',
+//        'DB_USER'=>'homestead',
+        'DB_USER'=>'root',
+//        'DB_PASS'=>'secret',
+        'DB_PASS'=>'root',
+        'DB_PREFIX'=>'lazy',
         'DB_NAME'=>'lazy',
     ],
 
