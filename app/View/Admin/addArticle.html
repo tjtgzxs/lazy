@@ -1,0 +1,79 @@
+{include "static/header.html" title="{$title}"}
+<body>
+{include "Admin/admin_nav.html"}
+<div class="container">
+    <h1>edit the article</h1>
+    <form method="post" id="form" action="?r=Admin/insertArticle">
+        <div class="form-group">
+            <label for="top_category">top category:</label>
+            <select id="top_category" class="form-control form-control-sm" name="top_cate">
+                <option value="0">without category</option>
+                {foreach $list as $k=>$item}
+                <option value="{$item.id}" {if isset($pid)&&$item.id==$pid}selected{/if}>{$item.name}</option>
+                {/foreach}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="second_category">top category:</label>
+            <select id="second_category" class="form-control form-control-sm" name="second_cate">
+                <option value="0">without category</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="title">title:</label>
+            <input type="text" name="title" value="" id="title" class="form-control form-control-sm" {if isset($article_title)}value="{$article_title}"{/if>
+        </div>
+        <div class="form-group">
+            <div id="editor">
+               {if isset($content)}{$content}{/if}
+            </div>
+        </div>
+        <input type="hidden" class="form-control" id="text" name="text" value="">
+        {if isset($id)}
+        <input type="hidden" class="form-control" id="id" name="id" value="{$id}">
+        {/if}
+        <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>
+    </form>
+</div>
+{include "static/footer.html"}
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    // or var editor = new E( document.getElementById('editor') )
+    editor.create()
+    function sub() {
+        var html=editor.txt.html();
+        var form=$("#form");
+        $("#text").attr('value',html);
+        form.submit();
+    }
+</script>
+<script>
+    $("#top_category").change(function () {
+        $("#second_category").html("");
+        $("#second_category").append("<option value=\"0\">without category</option>");
+        var ss = $(this).children('option:selected').val();
+        $.ajax({
+            url:"?r=Admin/getSecond&pid="+ss,
+            type:'POST',
+            dataType:"JSON",
+            async:false,
+            success:function (data) {
+                if(data.code==0){
+                    alert(data.msg);
+                }else {
+                    var arr=data.data;
+                    arr.forEach(function (index,value) {
+                        console.log( value, index, this );
+                        $("#second_category").append("<option value=\""+index['id']+"\">"+index['name']+"</option>");
+                        // $("#second_category").appendChild('')
+                    })
+
+                }
+            }
+        })
+    });
+    
+</script>
+</body>
+</html>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-03 03:01:38
+/* Smarty version 3.1.32, created on 2018-08-06 03:14:40
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b63c5925ca6c6_42181036',
+  'unifunc' => 'content_5b67bd2001f405_51575349',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -30,25 +30,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\admin_nav.html',
-      1 => 1533265296,
+      1 => 1533281514,
       2 => 'file',
     ),
     '11367b371eea48768b2151d04bac0d54ae065700' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\footer.html',
-      1 => 1533021709,
+      1 => 1533286408,
       2 => 'file',
     ),
     'a92825ce6e6cc406087c05ac96926c8505c198dd' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_js.html',
-      1 => 1533026437,
+      1 => 1533287712,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b63c5925ca6c6_42181036 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b67bd2001f405_51575349 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +72,7 @@ function content_5b63c5925ca6c6_42181036 (Smarty_Internal_Template $_smarty_tpl)
                     Category
                 </a>
                 <div class="dropdown-menu" aria-labelledby="MenuLink">
-                    <a class="dropdown-item" href="#">Category List</a>
+                    <a class="dropdown-item" href="?r=admin/CategoryList">Category List</a>
                     <a class="dropdown-item" href="?r=admin/addCategory">Add Category</a>
                 </div>
             </li>
@@ -99,6 +99,9 @@ function content_5b63c5925ca6c6_42181036 (Smarty_Internal_Template $_smarty_tpl)
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 </body>
 </html><?php }
 }

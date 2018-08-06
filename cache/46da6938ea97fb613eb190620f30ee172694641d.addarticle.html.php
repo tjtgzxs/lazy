@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-06 08:09:52
-  from 'D:\phpStudy\WWW\lazy\app\View\Admin\cate_list.html' */
+/* Smarty version 3.1.32, created on 2018-08-06 09:05:21
+  from 'D:\phpStudy\WWW\lazy\app\View\Admin\addarticle.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b68025064d484_61771319',
+  'unifunc' => 'content_5b680f51163780_18091489',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '6584a2d229bba9cb82dc18c4f1fecee03038a51c' => 
+    'f7083d3a356c79aa5c1e1c9ce38b5cec9a08104b' => 
     array (
-      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\cate_list.html',
-      1 => 1533288188,
+      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\addarticle.html',
+      1 => 1533546319,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b68025064d484_61771319 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b680f51163780_18091489 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +56,7 @@ function content_5b68025064d484_61771319 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="app\View\static\img\logo.jpg">
-    <title>category list</title>
+    <title>add article</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="app/View/static/css/app.css">
 <link rel="stylesheet" href="app/View/static/css/wangEditor.min.css"></head>
@@ -94,12 +94,36 @@ function content_5b68025064d484_61771319 (Smarty_Internal_Template $_smarty_tpl)
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-</nav>  <a href="?r=admin/addCategory&id=1"><li>PHP</li></a><a onclick="del(1)">delete</a>
-  <a  href="?r=admin/addCategory&id=2">Laravel</a><a onclick="del(2)">delete</a>
-  <a  href="?r=admin/addCategory&id=24">CI</a><a onclick="del(24)">delete</a>
-  <a  href="?r=admin/addCategory&id=25">CI</a><a onclick="del(25)">delete</a>
-<a href="?r=admin/addCategory&id=4"><li>database</li></a><a onclick="del(4)">delete</a>
-  <a  href="?r=admin/addCategory&id=3">predis</a><a onclick="del(3)">delete</a>
+</nav><div class="container">
+    <h1>edit the article</h1>
+    <form method="post" id="form" action="?r=Admin/insertArticle">
+        <div class="form-group">
+            <label for="top_category">top category:</label>
+            <select id="top_category" class="form-control form-control-sm" name="top_cate">
+                <option value="0">without category</option>
+                                <option value="1" >PHP</option>
+                                <option value="4" >database</option>
+                            </select>
+        </div>
+        <div class="form-group">
+            <label for="second_category">top category:</label>
+            <select id="second_category" class="form-control form-control-sm" name="second_cate">
+                <option value="0">without category</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="title">title:</label>
+            <input type="text" name="title" value="" id="title" class="form-control form-control-sm">
+        </div>
+        <div class="form-group">
+            <div id="editor">
+
+            </div>
+        </div>
+        <input type="hidden" class="form-control" id="text" name="text" value="">
+                <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>
+    </form>
+</div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -108,26 +132,43 @@ function content_5b68025064d484_61771319 (Smarty_Internal_Template $_smarty_tpl)
 <script src="app/View/static/js/wangEditor.min.js"></script>
 
 <script type="text/javascript">
-    function del(id) {
-        var check=confirm('Are you sure delete this category? ');
-        if(check==true){
-            $.ajax({
-                url:"?r=Admin/delete&id="+id,
-                type:"POST",
-                // data:"r=admin/delete&id="+id,
-                dataType:"JSON",
-                async:false,
-                success:function (data) {
-                    if(data.code==0){
-                        alert(data.msg);
-                    }else {
-                        alert(data.msg);
-                        history.go(0);
-                    }
-                }
-            })
-        }
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    // or var editor = new E( document.getElementById('editor') )
+    editor.create()
+    function sub() {
+        var html=editor.txt.html();
+        var form=$("#form");
+        $("#text").attr('value',html);
+        form.submit();
     }
+</script>
+<script>
+    $("#top_category").change(function () {
+        $("#second_category").html("");
+        $("#second_category").append("<option value=\"0\">without category</option>");
+        var ss = $(this).children('option:selected').val();
+        $.ajax({
+            url:"?r=Admin/getSecond&pid="+ss,
+            type:'POST',
+            dataType:"JSON",
+            async:false,
+            success:function (data) {
+                if(data.code==0){
+                    alert(data.msg);
+                }else {
+                    var arr=data.data;
+                    arr.forEach(function (index,value) {
+                        console.log( value, index, this );
+                        $("#second_category").append("<option value=\""+index['id']+"\">"+index['name']+"</option>");
+                        // $("#second_category").appendChild('')
+                    })
+
+                }
+            }
+        })
+    });
+    
 </script>
 </body>
 </html><?php }

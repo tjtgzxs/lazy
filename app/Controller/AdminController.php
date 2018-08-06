@@ -120,6 +120,9 @@ class AdminController extends BaseController
         die();
     }
 
+    /**
+     * delete Category
+     */
     public function deleteAction(){
         $id=$_GET['id'];
         $m=new AdminModel();
@@ -130,5 +133,69 @@ class AdminController extends BaseController
             echo json_encode(['code'=>1,'msg'=>'delete success']);die();
         }
     }
+
+    /**
+     * get add article page
+     */
+    public function addArticleAction(){
+      $m=new AdminModel();
+      $list=$m->getAllCategory(['parent_id'=>0]);
+      if($_GET['id']){
+          $info=$m->getArticle($_GET['id']);
+          $this->assign('article_title',$info['$article_title']);
+          $this->assign('content',$info['content']);
+          //format date
+          $cate=$m->getCategory($info['cat_id']);
+          $second='';
+          if(empty($cate['parent_id'])){
+              $this->assign('top_cate',$cate);
+          }else{
+              $top=$m->getCategory($cate['parent_id']);
+              $this->assign('top_cate',$top);
+              $second=""
+          }
+      }
+      $this->assign('title','edit article');
+      $this->assign('list',$list);
+      $this->render();
+    }
+
+    /**
+     * get second category
+     */
+    public function getSecondAction(){
+        $pid=$_GET['pid'];
+        if(empty($pid)){
+            echo json_encode(['code'=>1,'msg'=>'change success']);
+            die();
+        }
+        $m=new AdminModel();
+        $list=$m->getAllCategory(['parent_id'=>$pid]);
+        if(empty($list)){
+            echo json_encode(['code'=>0,'msg'=>'change fail']);die();
+        }else{
+            echo json_encode(['code'=>1,'msg'=>'change success','data'=>$list]);die();
+        }
+    }
+
+    public function insertArticleAction(){
+        $m=new AdminModel();
+        $arr=[];
+        $arr['cat_id']= $_POST['top_cate'];
+        if(!empty($_POST['second_cate'])){
+            $arr['cat_id']= $_POST['second_cate'];
+         }
+        $arr['title']=$_POST['title'];
+        $arr['content']=$_POST['text'];
+        $arr['update_date']=date('Y-m-d H:i:s',time());
+        if(empty($_POST['id'])){
+            $result=$m->insertArticle($arr);
+        }else{
+            $result=$m->updateCate($_POST['id'],$arr);
+        }
+        return $result;
+    }
+
+
 
 }

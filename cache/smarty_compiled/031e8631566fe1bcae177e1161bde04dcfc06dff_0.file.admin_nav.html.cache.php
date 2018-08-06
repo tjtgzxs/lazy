@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-03 07:31:57
+/* Smarty version 3.1.32, created on 2018-08-06 06:21:56
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\admin_nav.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6404eda50a02_69114724',
+  'unifunc' => 'content_5b67e904cfc389_56341190',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\admin_nav.html',
-      1 => 1533281514,
+      1 => 1533536514,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b6404eda50a02_69114724 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '293655b6404ed9cdc45_88192388';
+function content_5b67e904cfc389_56341190 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '231165b67e904ca6489_75017417';
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand mb-0 h1" href="#"><img src="<?php echo __IMG__;?>
@@ -48,7 +48,7 @@ logo.jpg" width="30" height="30" alt="">Lazy Blog</a>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="MenuLink2">
                     <a class="dropdown-item" href="#">Article List</a>
-                    <a class="dropdown-item" href="#">Add Article</a>
+                    <a class="dropdown-item" href="?r=admin/addArticle">Add Article</a>
                 </div>
             </li>
         </ul>
