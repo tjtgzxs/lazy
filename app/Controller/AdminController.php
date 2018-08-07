@@ -150,9 +150,18 @@ class AdminController extends BaseController
           if(empty($cate['parent_id'])){
               $this->assign('top_cate',$cate);
           }else{
+              $second="";
               $top=$m->getCategory($cate['parent_id']);
               $this->assign('top_cate',$top);
-              $second=""
+              $list=$m->getAllCategory(['parent_id'=>$cate['parent_id']]);
+              foreach ($list as $k=>$v){
+                  $second.="<option value='".$v['id']."'";
+                  if($info['cat_id']==$v['id']){
+                      $second.=" selected ";
+                  }
+                  $second.=" >".$v['name']."</option>";
+              }
+               if(!empty($second)) $this->assign('second',$second);
           }
       }
       $this->assign('title','edit article');
@@ -178,6 +187,10 @@ class AdminController extends BaseController
         }
     }
 
+    /**
+     * insert or update Article
+     * @return bool|int
+     */
     public function insertArticleAction(){
         $m=new AdminModel();
         $arr=[];
@@ -194,6 +207,17 @@ class AdminController extends BaseController
             $result=$m->updateCate($_POST['id'],$arr);
         }
         return $result;
+    }
+
+
+    public function getArticleListAction(){
+        $m=new AdminModel();
+        $page=!empty($_GET['page'])?$_GET['page']:1;
+        $list=$m->getArticleList($page);
+        $this->assign('list',$list);
+        $page=$m->getArticlePage();
+        $this->assign('page',$page);
+        $this->render('article_list');
     }
 
 

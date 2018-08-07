@@ -131,6 +131,11 @@ class AdminModel extends BaseModel
         return $result;
     }
 
+    /**
+     * get article by id
+     * @param $id
+     * @return bool
+     */
     public function getArticle($id){
         $sql=" SELECT *  FROM lazy_article".
             " WHERE is_del=0 AND id={$id}";
@@ -140,6 +145,40 @@ class AdminModel extends BaseModel
             return $result[0];
         }
         return false;
+    }
+
+    /**
+     * get article list by page
+     * @param $page
+     * @param int $limit
+     * @return array
+     */
+    public function getArticleList($page,$limit=0){
+        $page_limit=!empty($limit)? $limit:LIMIT;
+        $start=($page-1)*$page_limit;
+        $sql=" SELECT * FROM lazy_article".
+             " WHERE is_del=0 ".
+             " ORDER BY update_date DESC ,id ".
+             " LIMIT $start,$page_limit";
+        $smt=$this->db->query($sql);
+        $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    /**
+     * get numuber of article
+     * @param int $limit
+     * @return float
+     */
+    public function getArticlePage($limit=0){
+        $page_limit=!empty($limit)? $limit:LIMIT;
+        $sql= " SELECT COUNT (*) as a_count FROM lazy_article".
+              " WHERE is_del=0";
+        $smt=$this->db->query($sql);
+        $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
+        $count=$result[0]['a_count'];
+        $page=ceil($count/$page_limit);
+        return $page;
     }
 
 
