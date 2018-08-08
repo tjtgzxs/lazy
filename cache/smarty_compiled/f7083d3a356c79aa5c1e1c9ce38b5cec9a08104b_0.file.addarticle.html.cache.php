@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-06 09:05:21
+/* Smarty version 3.1.32, created on 2018-08-08 06:10:21
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\addarticle.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b680f51144386_50030084',
+  'unifunc' => 'content_5b6a894d148f08_28512928',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7083d3a356c79aa5c1e1c9ce38b5cec9a08104b' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\addarticle.html',
-      1 => 1533546319,
+      1 => 1533708618,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:static/footer.html' => 1,
   ),
 ),false)) {
-function content_5b680f51144386_50030084 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '49565b680f510e6786_08206319';
+function content_5b6a894d148f08_28512928 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '221245b6a894d095405_51351485';
 $_smarty_tpl->_subTemplateRender("file:static/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0, false);
 ?>
 <body>
@@ -55,15 +55,25 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <label for="second_category">top category:</label>
             <select id="second_category" class="form-control form-control-sm" name="second_cate">
                 <option value="0">without category</option>
+                <?php if (isset($_smarty_tpl->tpl_vars['second']->value)) {
+echo $_smarty_tpl->tpl_vars['second']->value;
+}?>
             </select>
         </div>
         <div class="form-group">
             <label for="title">title:</label>
-            <input type="text" name="title" value="" id="title" class="form-control form-control-sm">
+            <input type="text" name="title"  id="title" class="form-control form-control-sm" <?php if (isset($_smarty_tpl->tpl_vars['article_title']->value)) {?> value="<?php echo $_smarty_tpl->tpl_vars['article_title']->value;?>
+"<?php }?>>
+        </div>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose image</label>
         </div>
         <div class="form-group">
             <div id="editor">
-
+               <?php if (isset($_smarty_tpl->tpl_vars['content']->value)) {
+echo $_smarty_tpl->tpl_vars['content']->value;
+}?>
             </div>
         </div>
         <input type="hidden" class="form-control" id="text" name="text" value="">

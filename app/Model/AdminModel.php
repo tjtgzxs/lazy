@@ -21,8 +21,9 @@ class AdminModel extends BaseModel
      */
     public function checkUser($username,$pass){
         $sql=" SELECT * FROM lazy_admin_user ".
-             " WHERE user='{$username}' AND password='{$pass}' AND id_del=0";
+             " WHERE user='{$username}' AND password='{$pass}' AND is_del=0";
         $smt=$this->db->query($sql);
+//        print_r($this->db->errorInfo());
         $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
         if(!empty($result[0])){
             return $result[0];
@@ -119,10 +120,10 @@ class AdminModel extends BaseModel
      */
     public function updateArticle($id,$arr,$del=0){
         if($del==0){
-            $sql=" UPDATE lazy_article SET title=".$arr['title']." ,content='".$arr['content']."',update_date='".$arr['update_date']."'is_del={$del}".
+            $sql=" UPDATE lazy_article SET cat_id=".$arr['cat_id']." , title='".$arr['title']."' ,content='".$arr['content']."',update_date='".$arr['update_date']."',is_del={$del}".
                 " WHERE id={$id}";
         }else{
-            $sql=" UPDATE lazy_cate SET is_del={$del}".
+            $sql=" UPDATE lazy_article SET is_del={$del}".
                 " WHERE id={$id}";
         }
 
@@ -140,6 +141,7 @@ class AdminModel extends BaseModel
         $sql=" SELECT *  FROM lazy_article".
             " WHERE is_del=0 AND id={$id}";
         $smt=$this->db->query($sql);
+
         $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
         if(!empty($result)){
             return $result[0];
@@ -160,6 +162,7 @@ class AdminModel extends BaseModel
              " WHERE is_del=0 ".
              " ORDER BY update_date DESC ,id ".
              " LIMIT $start,$page_limit";
+
         $smt=$this->db->query($sql);
         $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
@@ -172,7 +175,7 @@ class AdminModel extends BaseModel
      */
     public function getArticlePage($limit=0){
         $page_limit=!empty($limit)? $limit:LIMIT;
-        $sql= " SELECT COUNT (*) as a_count FROM lazy_article".
+        $sql= " SELECT count(id) as a_count FROM lazy_article".
               " WHERE is_del=0";
         $smt=$this->db->query($sql);
         $result=$smt->fetchAll(\PDO::FETCH_ASSOC);

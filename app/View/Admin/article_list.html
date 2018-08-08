@@ -1,7 +1,65 @@
 {include "static/header.html" title="{$title}"}
 <body>
 {include "Admin/admin_nav.html"}
+{if isset($list)}
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+            <th scope="col">update time</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $k=>$v}
+        <tr>
+            <th scope="row">{$v.id}</th>
+            <td>{$v.title}</td>
+            <td>{$v.update_date}</td>
+            <td>
+                <a href="javascript:void" onclick="del({$v.id})">delete</a>
+                <a href="?r=admin/addArticle&id={$v.id}">edit</a>
+            </td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
 
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item {if $page==1}disabled{/if}"><a class="page-link" href="#">Previous</a></li>
+            {for $n=1 to $max}
+            <li class="page-item"><a class="page-link" href="?r=admin/getArticleList&page={$n}">{$n}</a></li>
+            {/for}
+            <li class="page-item {if $page==$max }disabled{/if}"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+</div>
+{/if}
 {include "static/footer.html"}
+<script type="text/javascript">
+    function del(id) {
+        var check=confirm('Are you sure delete this article? ');
+        if(check==true){
+            $.ajax({
+                url:"?r=Admin/deleteArticle&id="+id,
+                type:"POST",
+                // data:"r=admin/delete&id="+id,
+                dataType:"JSON",
+                async:false,
+                success:function (data) {
+                    if(data.code==0){
+                        alert(data.msg);
+                    }else {
+                        alert(data.msg);
+                        history.go(0);
+                    }
+                }
+            })
+        }
+    }
+</script>
 </body>
 </html>

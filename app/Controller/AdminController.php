@@ -16,6 +16,7 @@ class AdminController extends BaseController
      */
     public function LoginAction(){
         session_start();
+
         if(!empty($_SESSION['a_info'])){
             $this->assign('info',$_SESSION['a_info']);
             $this->assign('title','manage');
@@ -134,27 +135,42 @@ class AdminController extends BaseController
         }
     }
 
+    public function deleteArticleAction(){
+        $id=$_GET['id'];
+        $m=new AdminModel();
+        $result=$m->updateArticle($id,[],1);
+        if(empty($result)){
+            echo json_encode(['code'=>0,'msg'=>'delete fail']);die();
+        }else{
+            echo json_encode(['code'=>1,'msg'=>'delete success']);die();
+        }
+    }
+
     /**
      * get add article page
      */
     public function addArticleAction(){
       $m=new AdminModel();
       $list=$m->getAllCategory(['parent_id'=>0]);
-      if($_GET['id']){
+      if(!empty($_GET['id'])){
           $info=$m->getArticle($_GET['id']);
-          $this->assign('article_title',$info['$article_title']);
+          $this->assign('article_title',$info['title']);
           $this->assign('content',$info['content']);
+          $this->assign('id',$info['id']);
           //format date
           $cate=$m->getCategory($info['cat_id']);
           $second='';
           if(empty($cate['parent_id'])){
               $this->assign('top_cate',$cate);
+              $this->assign('pid',$cate['id']);
           }else{
               $second="";
               $top=$m->getCategory($cate['parent_id']);
+//              print_r($top);die();
               $this->assign('top_cate',$top);
-              $list=$m->getAllCategory(['parent_id'=>$cate['parent_id']]);
-              foreach ($list as $k=>$v){
+              $this->assign('pid',$top['id']);
+              $list1=$m->getAllCategory(['parent_id'=>$cate['parent_id']]);
+              foreach ($list1 as $k=>$v){
                   $second.="<option value='".$v['id']."'";
                   if($info['cat_id']==$v['id']){
                       $second.=" selected ";
@@ -204,19 +220,25 @@ class AdminController extends BaseController
         if(empty($_POST['id'])){
             $result=$m->insertArticle($arr);
         }else{
-            $result=$m->updateCate($_POST['id'],$arr);
+            $result=$m->updateArticle($_POST['id'],$arr);
         }
-        return $result;
+        header('Location:?r=admin/getArticleList');
+        die();
     }
 
-
+    /**
+     * 获取文章列表
+     */
     public function getArticleListAction(){
         $m=new AdminModel();
         $page=!empty($_GET['page'])?$_GET['page']:1;
         $list=$m->getArticleList($page);
         $this->assign('list',$list);
-        $page=$m->getArticlePage();
+        $max_page=$m->getArticlePage();
+//        echo $page;die();
         $this->assign('page',$page);
+        $this->assign('title','article list');
+        $this->assign('max',$max_page);
         $this->render('article_list');
     }
 

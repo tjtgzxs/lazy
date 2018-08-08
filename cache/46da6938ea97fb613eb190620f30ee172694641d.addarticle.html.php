@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-06 09:05:21
+/* Smarty version 3.1.32, created on 2018-08-08 06:10:21
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\addarticle.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b680f51163780_18091489',
+  'unifunc' => 'content_5b6a894d160601_78716532',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7083d3a356c79aa5c1e1c9ce38b5cec9a08104b' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\addarticle.html',
-      1 => 1533546319,
+      1 => 1533708618,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -30,7 +30,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\admin_nav.html',
-      1 => 1533536514,
+      1 => 1533694116,
       2 => 'file',
     ),
     '11367b371eea48768b2151d04bac0d54ae065700' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b680f51163780_18091489 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6a894d160601_78716532 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +56,7 @@ function content_5b680f51163780_18091489 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="app\View\static\img\logo.jpg">
-    <title>add article</title>
+    <title>edit article</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="app/View/static/css/app.css">
 <link rel="stylesheet" href="app/View/static/css/wangEditor.min.css"></head>
@@ -84,7 +84,7 @@ function content_5b680f51163780_18091489 (Smarty_Internal_Template $_smarty_tpl)
                     Article
                 </a>
                 <div class="dropdown-menu" aria-labelledby="MenuLink2">
-                    <a class="dropdown-item" href="#">Article List</a>
+                    <a class="dropdown-item" href="?r=admin/getArticleList">Article List</a>
                     <a class="dropdown-item" href="?r=admin/addArticle">Add Article</a>
                 </div>
             </li>
@@ -109,16 +109,19 @@ function content_5b680f51163780_18091489 (Smarty_Internal_Template $_smarty_tpl)
             <label for="second_category">top category:</label>
             <select id="second_category" class="form-control form-control-sm" name="second_cate">
                 <option value="0">without category</option>
-            </select>
+                            </select>
         </div>
         <div class="form-group">
             <label for="title">title:</label>
-            <input type="text" name="title" value="" id="title" class="form-control form-control-sm">
+            <input type="text" name="title"  id="title" class="form-control form-control-sm" >
+        </div>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose image</label>
         </div>
         <div class="form-group">
             <div id="editor">
-
-            </div>
+                           </div>
         </div>
         <input type="hidden" class="form-control" id="text" name="text" value="">
                 <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>

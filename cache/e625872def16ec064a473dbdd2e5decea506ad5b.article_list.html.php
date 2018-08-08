@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-08 06:04:47
-  from 'D:\phpStudy\WWW\lazy\app\View\Admin\index.html' */
+/* Smarty version 3.1.32, created on 2018-08-08 05:35:20
+  from 'D:\phpStudy\WWW\lazy\app\View\Admin\article_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6a87ffa9ba83_87374822',
+  'unifunc' => 'content_5b6a8118271d09_25810943',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '3b0926f50074a8119786dd5b07e130168cde0aab' => 
+    '06cce378f3adfd521673cb9557c82ecb44026a53' => 
     array (
-      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\index.html',
-      1 => 1533197461,
+      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\article_list.html',
+      1 => 1533706515,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6a87ffa9ba83_87374822 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6a8118271d09_25810943 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +56,7 @@ function content_5b6a87ffa9ba83_87374822 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="app\View\static\img\logo.jpg">
-    <title>manage</title>
+    <title>article list</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="app/View/static/css/app.css">
 <link rel="stylesheet" href="app/View/static/css/wangEditor.min.css"></head>
@@ -94,8 +94,37 @@ function content_5b6a87ffa9ba83_87374822 (Smarty_Internal_Template $_smarty_tpl)
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-</nav>
+</nav><div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+            <th scope="col">update time</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+                <tr>
+            <th scope="row">1</th>
+            <td>How to start Lavarel with redis --2</td>
+            <td>2018-08-08 03:38:32</td>
+            <td>
+                <a href="javascript:void" onclick="del(1)">delete</a>
+                <a href="?r=admin/addArticle&id=1">edit</a>
+            </td>
+        </tr>
+                </tbody>
+    </table>
 
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="?r=admin/getArticleList&page=1">1</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+</div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -103,6 +132,28 @@ function content_5b6a87ffa9ba83_87374822 (Smarty_Internal_Template $_smarty_tpl)
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="app/View/static/js/wangEditor.min.js"></script>
 
+<script type="text/javascript">
+    function del(id) {
+        var check=confirm('Are you sure delete this article? ');
+        if(check==true){
+            $.ajax({
+                url:"?r=Admin/deleteArticle&id="+id,
+                type:"POST",
+                // data:"r=admin/delete&id="+id,
+                dataType:"JSON",
+                async:false,
+                success:function (data) {
+                    if(data.code==0){
+                        alert(data.msg);
+                    }else {
+                        alert(data.msg);
+                        history.go(0);
+                    }
+                }
+            })
+        }
+    }
+</script>
 </body>
 </html><?php }
 }
