@@ -50,18 +50,39 @@ class BaseModel extends \PDO
      * @param null $order
      * @return string
      */
-    public function generateSelectSql($table,$data="*",$where=null,$start=null,$limit=null,$order=null){
+    public function generateSelectSql($table,$data="*",$where=null,$order=null,$start=null,$limit=null){
         //generate data which you want to fetch
         if(is_array($data)){
             $data=implode(',',$data);
         }
         //generate which data
+        $where_string=$where;
         if(is_array($where)){
-            $where=implode(' and ',$where);
+            $where_string="";
+            foreach ($where as $k=>$v){
+                $where_string.="$k=$v";
+                if($v!=end($where)){
+                    $where_string.=" AND ";
+                }
+            }
+
         }
         $sql=" SELECT {$data} FROM {$table} ";
-        if(!empty($where)){
-            $sql.=" WHERE ".$where;
+        if(!empty($where_string)){
+            $sql.=" WHERE ".$where_string;
+        }
+
+        //generate order sql
+        if(!empty($order)){
+            $sql.=" ORDER BY ";
+            if(is_array($order)){
+                foreach ($order as $k=>$v){
+                    $sql.="  $k $v ";
+                    if($v!=end($order)) $sql.=',';
+                }
+            }else{
+                $sql.=" $order";
+            }
         }
         //generate data which limit
         if(!empty($start)||!empty($limit)){
@@ -71,16 +92,7 @@ class BaseModel extends \PDO
                 $sql.=" LIMIT $start,$limit";
             }
         }
-        //generate order sql
-        if(!empty($order)){
-            if(is_array($order)){
-                foreach ($order as $k=>$v){
-                    $sql.=" ORDER $k $v";
-                }
-            }else{
-                $sql.="ORDER $order";
-            }
-        }
+
         return $sql;
     }
 
@@ -94,11 +106,56 @@ class BaseModel extends \PDO
      * @param null $order
      * @return array
      */
-    public function getAll($table,$data="*",$where=null,$start=null,$limit=null,$order=null){
-        $sql=$this->generateSelectSql($table,$data,$where,$start,$limit,$order);
+    public function getAll($table,$data="*",$where=null,$order=null,$start=null,$limit=null){
+        $sql=$this->generateSelectSql($table,$data,$where,$order,$start,$limit);
         $stmt=$this->db->query($sql);
         $arr=$stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $arr;
+    }
+    public function getOne($table,$data="*",$where=null){
+        $sql=$this->generateSelectSql($table,$data,$where);
+        $stmt=$this->db->query($sql);
+        $arr=$stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $arr[0];
+
+    }
+
+    /**
+     * update table
+     * @param $table
+     * @param $id
+     * @param $data
+     * @return bool
+     */
+    public function updateTable($table,$id,$data){
+            $sql=" UPDATE {$table} ";
+            if(!empty($data)&&is_array($data)){
+                $sql.=" SET ";
+                foreach ($data as $k=>$v){
+                   $sql.=" {$k}=".$v;
+                   if($v!=end($data)) $sql.=" , ";
+                }
+            }
+            $sql.=" WHERE id={$id}";
+        $smt=$this->db->query($sql);
+        $result=$smt->execute();
+        return $result;
+    }
+
+    /**
+     * get paginate function
+     * @param $table
+     * @param int $page_limit
+     * @return float
+     */
+    public function paginate($table, $page_limit=LIMIT){
+        $sql= " SELECT count(id) as a_count FROM {$table}".
+            " WHERE is_del=0";
+        $smt=$this->db->query($sql);
+        $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
+        $count=$result[0]['a_count'];
+        $page=ceil($count/$page_limit);
+        return $page;
     }
 
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-09 09:15:54
-  from 'D:\phpStudy\WWW\lazy\app\View\Admin\addarticle.html' */
+/* Smarty version 3.1.32, created on 2018-08-09 09:26:57
+  from 'D:\phpStudy\WWW\lazy\app\View\Admin\banner_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6c064a242e97_25511398',
+  'unifunc' => 'content_5b6c08e19a5892_78908322',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f7083d3a356c79aa5c1e1c9ce38b5cec9a08104b' => 
+    '70fd82e2cef8891fa62f2251035d79351aafe507' => 
     array (
-      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\addarticle.html',
-      1 => 1533708618,
+      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\banner_list.html',
+      1 => 1533806815,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -33,6 +33,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
       1 => 1533804503,
       2 => 'file',
     ),
+    '04a031232e1e322e1a15ec732bda512d9a65072e' => 
+    array (
+      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_page.html',
+      1 => 1533805267,
+      2 => 'file',
+    ),
     '11367b371eea48768b2151d04bac0d54ae065700' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\footer.html',
@@ -48,7 +54,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6c064a242e97_25511398 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6c08e19a5892_78908322 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +62,7 @@ function content_5b6c064a242e97_25511398 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="app\View\static\img\logo.jpg">
-    <title>edit article</title>
+    <title>edit banner</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="app/View/static/css/app.css">
 <link rel="stylesheet" href="app/View/static/css/wangEditor.min.css"></head>
@@ -105,40 +111,33 @@ function content_5b6c064a242e97_25511398 (Smarty_Internal_Template $_smarty_tpl)
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-</nav><div class="container">
-    <h1>edit the article</h1>
-    <form method="post" id="form" action="?r=Admin/insertArticle">
-        <div class="form-group">
-            <label for="top_category">top category:</label>
-            <select id="top_category" class="form-control form-control-sm" name="top_cate">
-                <option value="0">without category</option>
-                                <option value="1" >PHP</option>
-                                <option value="4" >database</option>
-                            </select>
-        </div>
-        <div class="form-group">
-            <label for="second_category">top category:</label>
-            <select id="second_category" class="form-control form-control-sm" name="second_cate">
-                <option value="0">without category</option>
-                            </select>
-        </div>
-        <div class="form-group">
-            <label for="title">title:</label>
-            <input type="text" name="title"  id="title" class="form-control form-control-sm"  value="How to start Lavarel with redis --2">
-        </div>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose image</label>
-        </div>
-        <div class="form-group">
-            <div id="editor">
-               <p><span style="background-color: rgb(28, 72, 127);">adasdasd</span></p><p><br></p>            </div>
-        </div>
-        <input type="hidden" class="form-control" id="text" name="text" value="">
-                <input type="hidden" class="form-control" id="id" name="id" value="1">
-                <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>
-    </form>
+</nav><br />
+<div class="container">
+    <a><button  type="button" class="btn btn-info">add banner</button></a>
 </div>
+<hr />
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">pic_url</th>
+            <th scope="col">link</th>
+            <th scope="col">is_show</th>
+            <th scope="col">update time</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+                </tbody>
+    </table>
+
+    <nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item "><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav></div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -147,43 +146,28 @@ function content_5b6c064a242e97_25511398 (Smarty_Internal_Template $_smarty_tpl)
 <script src="app/View/static/js/wangEditor.min.js"></script>
 
 <script type="text/javascript">
-    var E = window.wangEditor
-    var editor = new E('#editor')
-    // or var editor = new E( document.getElementById('editor') )
-    editor.create()
-    function sub() {
-        var html=editor.txt.html();
-        var form=$("#form");
-        $("#text").attr('value',html);
-        form.submit();
-    }
-</script>
-<script>
-    $("#top_category").change(function () {
-        $("#second_category").html("");
-        $("#second_category").append("<option value=\"0\">without category</option>");
-        var ss = $(this).children('option:selected').val();
-        $.ajax({
-            url:"?r=Admin/getSecond&pid="+ss,
-            type:'POST',
-            dataType:"JSON",
-            async:false,
-            success:function (data) {
-                if(data.code==0){
-                    alert(data.msg);
-                }else {
-                    var arr=data.data;
-                    arr.forEach(function (index,value) {
-                        console.log( value, index, this );
-                        $("#second_category").append("<option value=\""+index['id']+"\">"+index['name']+"</option>");
-                        // $("#second_category").appendChild('')
-                    })
-
+    function del(id) {
+        var check=confirm('Are you sure delete this banner? ');
+        if(check==true){
+            $.ajax({
+                url:"?r=Admin/delBanner",
+                type:"POST",
+                data:{
+                    'banner_id':id
+                },
+                dataType:"JSON",
+                async:false,
+                success:function (data) {
+                    if(data.code==0){
+                        alert(data.msg);
+                    }else {
+                        alert(data.msg);
+                        history.go(0);
+                    }
                 }
-            }
-        })
-    });
-    
+            })
+        }
+    }
 </script>
 </body>
 </html><?php }

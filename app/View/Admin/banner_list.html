@@ -2,12 +2,19 @@
 <body>
 {include "Admin/admin_nav.html"}
 {if isset($list)}
+<br />
+<div class="container">
+    <a><button  type="button" class="btn btn-info">add banner</button></a>
+</div>
+<hr />
 <div class="container">
     <table class="table">
         <thead class="thead-dark">
         <tr>
             <th scope="col">id</th>
-            <th scope="col">title</th>
+            <th scope="col">pic_url</th>
+            <th scope="col">link</th>
+            <th scope="col">is_show</th>
             <th scope="col">update time</th>
             <th scope="col">Handle</th>
         </tr>
@@ -16,7 +23,9 @@
         {foreach $list as $k=>$v}
         <tr>
             <th scope="row">{$v.id}</th>
-            <td>{$v.title}</td>
+            <td>{$v.pic_url}</td>
+            <td>{$v.link}</td>
+            <td>{$v.is_show}</td>
             <td>{$v.update_date}</td>
             <td>
                 <a href="javascript:void" onclick="del({$v.id})">delete</a>
@@ -27,18 +36,20 @@
         </tbody>
     </table>
 
-   {include "static/common_page.html"  max="{$max_page}"}
+    {include "static/common_page.html"  max="{$max_page}"}
 </div>
 {/if}
 {include "static/footer.html"}
 <script type="text/javascript">
     function del(id) {
-        var check=confirm('Are you sure delete this article? ');
+        var check=confirm('Are you sure delete this banner? ');
         if(check==true){
             $.ajax({
-                url:"?r=Admin/deleteArticle&id="+id,
+                url:"?r=Admin/delBanner",
                 type:"POST",
-                // data:"r=admin/delete&id="+id,
+                data:{
+                    'banner_id':id
+                },
                 dataType:"JSON",
                 async:false,
                 success:function (data) {

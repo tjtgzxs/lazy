@@ -238,10 +238,48 @@ class AdminController extends BaseController
 //        echo $page;die();
         $this->assign('page',$page);
         $this->assign('title','article list');
-        $this->assign('max',$max_page);
+        $this->assign('max_page',$max_page);
         $this->render('article_list');
     }
 
+    /**
+     * get Banner list
+     */
+    public function getBannerListAction(){
+        $m=new AdminModel();
+        $page=!empty($_GET['page'])?$_GET['page']:1;
+        $start=($page-1)*LIMIT;
+        $list=$m->getAll('lazy_banner','*',['is_del'=>0],['update_date'=>'DESC','id'=>'ASC'],$start,LIMIT);
+        $max_page=$m->paginate('lazy_banner');
+        $this->assign('list',$list);
+        $this->assign('page',$page);
+        $this->assign('title','edit banner');
+        $this->assign('max_page',$max_page);
+        $this->render('banner_list');
+    }
+
+    /**
+     * del banner
+     */
+    public function delBannerAction(){
+        $id=$_POST['banner_id'];
+        $m=new AdminModel();
+        $result=$m->updateTable('lazy_banner',$id,['is_del'=>1]);
+        if(empty($result)){
+            echo json_encode(['code'=>0,'msg'=>'delete fail']);die();
+        }else{
+            echo json_encode(['code'=>1,'msg'=>'delete success']);die();
+        }
+    }
+
+    public function addBannerAction(){
+        $m=new AdminModel();
+        if($_POST['banner_id']){
+            $info=$m->getOne('lazy_banner',"*",['id'=>$_POST['banner_id']]);
+        }
+        $this->assign('title','add banner');
+        $this->render('add_banner');
+    }
 
 
 }

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-08 05:47:48
+/* Smarty version 3.1.32, created on 2018-08-09 07:56:01
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\login.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6a84040e3601_81297525',
+  'unifunc' => 'content_5b6bf391511a94_55780924',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -42,7 +42,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6a84040e3601_81297525 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6bf391511a94_55780924 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-08 06:04:47
+/* Smarty version 3.1.32, created on 2018-08-09 09:01:10
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6a87ffa9ba83_87374822',
+  'unifunc' => 'content_5b6c02d64cb598_54100245',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -30,7 +30,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\admin_nav.html',
-      1 => 1533694116,
+      1 => 1533804503,
       2 => 'file',
     ),
     '11367b371eea48768b2151d04bac0d54ae065700' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6a87ffa9ba83_87374822 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6c02d64cb598_54100245 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,6 +85,17 @@ function content_5b6a87ffa9ba83_87374822 (Smarty_Internal_Template $_smarty_tpl)
                 </a>
                 <div class="dropdown-menu" aria-labelledby="MenuLink2">
                     <a class="dropdown-item" href="?r=admin/getArticleList">Article List</a>
+                    <a class="dropdown-item" href="?r=admin/addArticle">Add Article</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="MenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    index
+                </a>
+                <div class="dropdown-menu" aria-labelledby="MenuLink3">
+                    <a class="dropdown-item" href="?r=admin/getBannerList">banner</a>
                     <a class="dropdown-item" href="?r=admin/addArticle">Add Article</a>
                 </div>
             </li>

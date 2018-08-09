@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-08 05:35:20
+/* Smarty version 3.1.32, created on 2018-08-09 09:01:46
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\article_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6a8118271d09_25810943',
+  'unifunc' => 'content_5b6c02fa7cce13_07092115',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '06cce378f3adfd521673cb9557c82ecb44026a53' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\article_list.html',
-      1 => 1533706515,
+      1 => 1533805300,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -30,7 +30,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\admin_nav.html',
-      1 => 1533694116,
+      1 => 1533804503,
+      2 => 'file',
+    ),
+    '04a031232e1e322e1a15ec732bda512d9a65072e' => 
+    array (
+      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_page.html',
+      1 => 1533805267,
       2 => 'file',
     ),
     '11367b371eea48768b2151d04bac0d54ae065700' => 
@@ -48,7 +54,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6a8118271d09_25810943 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6c02fa7cce13_07092115 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,6 +95,17 @@ function content_5b6a8118271d09_25810943 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
             </li>
         </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="MenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    index
+                </a>
+                <div class="dropdown-menu" aria-labelledby="MenuLink3">
+                    <a class="dropdown-item" href="?r=admin/getBannerList">banner</a>
+                    <a class="dropdown-item" href="?r=admin/addArticle">Add Article</a>
+                </div>
+            </li>
+        </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -117,14 +134,13 @@ function content_5b6a8118271d09_25810943 (Smarty_Internal_Template $_smarty_tpl)
                 </tbody>
     </table>
 
-    <nav aria-label="Page navigation">
-        <ul class="pagination">
-            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="?r=admin/getArticleList&page=1">1</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
-</div>
+   <nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="?r=admin/getArticleList&page=1">1</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav></div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
