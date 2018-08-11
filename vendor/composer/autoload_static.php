@@ -6,7 +6,15 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitcf99c89ef4dfdb52b6f7fa07e0099583
 {
+    public static $files = array (
+        '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'Q' => 
+        array (
+            'Qiniu\\' => 6,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -19,6 +27,10 @@ class ComposerStaticInitcf99c89ef4dfdb52b6f7fa07e0099583
     );
 
     public static $prefixDirsPsr4 = array (
+        'Qiniu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
