@@ -36,6 +36,7 @@ class qiniu
         if($err!==null){
             return['result'=>0,'ret'=>$ret,'err'=>$err];
         }else{
+            unset($img);//delete local image
             return['result'=>1,'ret'=>$ret,'err'=>$err];
         }
     }
