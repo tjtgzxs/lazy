@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-09 09:26:57
+/* Smarty version 3.1.32, created on 2018-08-10 03:45:55
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\banner_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6c08e19a5892_78908322',
+  'unifunc' => 'content_5b6d0a73d58683_43909466',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70fd82e2cef8891fa62f2251035d79351aafe507' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\banner_list.html',
-      1 => 1533806815,
+      1 => 1533872754,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -54,7 +54,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6c08e19a5892_78908322 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6d0a73d58683_43909466 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,7 +113,7 @@ function content_5b6c08e19a5892_78908322 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 </nav><br />
 <div class="container">
-    <a><button  type="button" class="btn btn-info">add banner</button></a>
+    <a href="?r=Admin/addBanner"><button  type="button" class="btn btn-info">add banner</button></a>
 </div>
 <hr />
 <div class="container">

@@ -274,11 +274,28 @@ class AdminController extends BaseController
 
     public function addBannerAction(){
         $m=new AdminModel();
-        if($_POST['banner_id']){
-            $info=$m->getOne('lazy_banner',"*",['id'=>$_POST['banner_id']]);
+        if(!empty($_GET['id'])){
+           $info=$m->getOne('lazy_banner','*',['id'=>$_GET['id']]);
+           $this->assign('info',$info);
         }
         $this->assign('title','add banner');
-        $this->render('add_banner');
+        $this->render("add_banner");
+    }
+
+    public function insertBannerAction(){
+        $m=new AdminModel();
+        $arr=[];
+        $arr['pic_title']=empty($_POST['title'])?'':$_POST['title'];
+        $arr['pic_url']=empty($_POST['pic_url'])?'':$_POST['pic_url'];
+        $arr['is_show']=empty($_POST['show'])?0:$_POST['show'];
+        $arr['link']=empty($_POST['link'])?'':$_POST['link'];
+        $arr['order']=empty($_POST['order'])?0:$_POST['order'];
+        $arr['update_date']=date('Y-m-d H:i:s',time());
+        if(!empty($_POST['id'])){
+            $m->updateTable('lazy_banner',$_POST['id'],$arr);
+        }else{
+            $m->insert('lazy_banner',$arr);
+        }
     }
 
 

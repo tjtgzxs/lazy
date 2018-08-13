@@ -20,7 +20,18 @@ class CommonFunction
                 define($k,$v);
             }
         }
+    }
 
+    /**
+     * deal uri which without HTTP or HTTPS
+     * @param $uri
+     * @return string
+     */
+    public static function dealUri($uri){
+        if(strpos($uri,'http:\/\/')===false&&strpos($uri,'https\/\/')===false){
+             return "http://".$uri;
+        }
+        return $uri;
     }
 
 }

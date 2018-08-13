@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-10 03:45:02
-  from 'D:\phpStudy\WWW\lazy\app\View\Admin\index.html' */
+/* Smarty version 3.1.32, created on 2018-08-10 08:13:43
+  from 'D:\phpStudy\WWW\lazy\app\View\Admin\add_banner.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6d0a3e46f287_88373265',
+  'unifunc' => 'content_5b6d493732ed84_04022983',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '3b0926f50074a8119786dd5b07e130168cde0aab' => 
+    '86f464b699a0fe4204700c0b5453801f42922b16' => 
     array (
-      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\index.html',
-      1 => 1533197461,
+      0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\add_banner.html',
+      1 => 1533888693,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6d0a3e46f287_88373265 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6d493732ed84_04022983 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +56,7 @@ function content_5b6d0a3e46f287_88373265 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="app\View\static\img\logo.jpg">
-    <title>manage</title>
+    <title>add banner</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="app/View/static/css/app.css">
 <link rel="stylesheet" href="app/View/static/css/wangEditor.min.css"></head>
@@ -105,8 +105,60 @@ function content_5b6d0a3e46f287_88373265 (Smarty_Internal_Template $_smarty_tpl)
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-</nav>
+</nav><div class="container">
+    <h1>add/edit banner</h1>
+    <form action="" method="post">
+        <div class="form-group row">
+            <label for="title" class="col-sm-2 col-form-label">title:</label>
+            <div class="col-sm-10">
+            <input type="text" id="title" class="form-control form-control-sm" name="title">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="customFile" class="col-sm-2 col-form-label">banner picture:</label>
+            <div class="col-sm-10">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose image</label>
+                </div>
+                <img src="">
+            </div>
+        </div>
 
+        <div class="form-group row">
+            <label for="order" class="col-sm-2 col-form-label">order:</label>
+            <div class="col-sm-10">
+                <input type="number" id="order" class="form-control form-control-sm" min="0" max="99" placeholder="order by ASC">
+            </div>
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Is Show?</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="show" id="not_show" value="0" checked>
+                        <label class="form-check-label" for="not_show">
+                            No
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="show" id="show" value="1">
+                        <label class="form-check-label" for="show">
+                            yes
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group row">
+            <label for="link" class="col-sm-2 col-form-label">link:</label>
+            <div class="col-sm-10">
+                <input type="text" id="link" class="form-control form-control-sm" name="link">
+            </div>
+        </div>
+                <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>
+    </form>
+</div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
