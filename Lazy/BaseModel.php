@@ -132,7 +132,7 @@ class BaseModel extends \PDO
             if(!empty($data)&&is_array($data)){
                 $sql.=" SET ";
                 foreach ($data as $k=>$v){
-                   $sql.=" {$k}=".$v;
+                   $sql.=" {$k}="."'$v'";
                    if($v!=end($data)) $sql.=" , ";
                 }
             }

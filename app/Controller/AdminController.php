@@ -8,6 +8,7 @@
 
 namespace Controller;
 use Lazy\BaseController;
+use Lazy\CommonFunction;
 use Model\AdminModel;
 class AdminController extends BaseController
 {
@@ -286,16 +287,29 @@ class AdminController extends BaseController
         $m=new AdminModel();
         $arr=[];
         $arr['pic_title']=empty($_POST['title'])?'':$_POST['title'];
-        $arr['pic_url']=empty($_POST['pic_url'])?'':$_POST['pic_url'];
+        $arr['pic_url']=empty($_POST['file'])?'':$_POST['file'];
         $arr['is_show']=empty($_POST['show'])?0:$_POST['show'];
         $arr['link']=empty($_POST['link'])?'':$_POST['link'];
-        $arr['order']=empty($_POST['order'])?0:$_POST['order'];
+        $arr['order_by']=empty($_POST['order'])?0:$_POST['order'];
         $arr['update_date']=date('Y-m-d H:i:s',time());
         if(!empty($_POST['id'])){
+
             $m->updateTable('lazy_banner',$_POST['id'],$arr);
         }else{
+
             $m->insert('lazy_banner',$arr);
         }
+        header('Location:?r=admin/getBannerList');
+        die();
+    }
+
+    /**
+     * 上传banner 图
+     */
+    public function uploadBannerAction(){
+        $file=$_FILES['bannerFile'];
+        $up=CommonFunction::upload($file);
+        echo json_encode($up);die();
     }
 
 

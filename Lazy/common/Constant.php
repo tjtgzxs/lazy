@@ -14,3 +14,4 @@ define('IS_POST',REQUEST_METHOD=='POST'?true:false);/** qiniu SDK */
 define('QINIU_AK','Ggt99ahSMW_sDTQGXix0PO9MTR8L-pLtMM79px0e');
 define('QINIU_SK','53b9Pvz-KUznSDlBTUU_mvzhF-bL4KMvnS1dTISK');
 define('QINIU_BUCKET','lazy');
+define('QINIU_URL','http://pd8uga5a3.bkt.gdipper.com/');

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-10 03:45:55
+/* Smarty version 3.1.32, created on 2018-08-13 08:25:58
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\banner_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6d0a73d58683_43909466',
+  'unifunc' => 'content_5b71409641b902_79821785',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70fd82e2cef8891fa62f2251035d79351aafe507' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\banner_list.html',
-      1 => 1533872754,
+      1 => 1534147943,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'e5e52b497183dd63357d21a1d1cedc5498e64466' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_css.html',
-      1 => 1533535381,
+      1 => 1534144295,
       2 => 'file',
     ),
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
@@ -48,13 +48,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'a92825ce6e6cc406087c05ac96926c8505c198dd' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_js.html',
-      1 => 1533535381,
+      1 => 1534125235,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6d0a73d58683_43909466 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b71409641b902_79821785 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,13 +129,36 @@ function content_5b6d0a73d58683_43909466 (Smarty_Internal_Template $_smarty_tpl)
         </tr>
         </thead>
         <tbody>
+                <tr>
+            <th scope="row">3</th>
+            <td>http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b714089a2288</td>
+            <td>https://www.baidu.com/1</td>
+            <td>1</td>
+            <td>2018-08-13 08:25:57</td>
+            <td>
+                <a href="javascript:void" onclick="del(3)">delete</a>
+                <a href="?r=admin/addBanner&id=3">edit</a>
+            </td>
+        </tr>
+                <tr>
+            <th scope="row">2</th>
+            <td>http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b713a819b140</td>
+            <td>https://www.wftcpc.com/</td>
+            <td>1</td>
+            <td>2018-08-13 08:09:09</td>
+            <td>
+                <a href="javascript:void" onclick="del(2)">delete</a>
+                <a href="?r=admin/addBanner&id=2">edit</a>
+            </td>
+        </tr>
                 </tbody>
     </table>
 
     <nav aria-label="Page navigation">
     <ul class="pagination">
         <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item "><a class="page-link" href="#">Next</a></li>
+                <li class="page-item"><a class="page-link" href="?r=admin/getArticleList&page=1">1</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
     </ul>
 </nav></div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -144,7 +167,7 @@ function content_5b6d0a73d58683_43909466 (Smarty_Internal_Template $_smarty_tpl)
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="app/View/static/js/wangEditor.min.js"></script>
-
+<script src="app/View/static/js/jquery.form.js"></script>
 <script type="text/javascript">
     function del(id) {
         var check=confirm('Are you sure delete this banner? ');

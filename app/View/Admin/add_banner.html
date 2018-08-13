@@ -3,28 +3,29 @@
 {include "Admin/admin_nav.html"}
 <div class="container">
     <h1>add/edit banner</h1>
-    <form action="" method="post">
+    <form action="?r=admin/insertBanner" method="post" id="form">
         <div class="form-group row">
             <label for="title" class="col-sm-2 col-form-label">title:</label>
             <div class="col-sm-10">
-            <input type="text" id="title" class="form-control form-control-sm" name="title">
+            <input type="text" id="title" class="form-control form-control-sm" {if isset($info.pic_title)}  value="{$info.pic_title}" {/if}name="title">
             </div>
         </div>
         <div class="form-group row">
             <label for="customFile" class="col-sm-2 col-form-label">banner picture:</label>
             <div class="col-sm-10">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
+                    <input type="file" class="custom-file-input" id="customFile" name="bannerFile" onchange="upload()">
                     <label class="custom-file-label" for="customFile">Choose image</label>
                 </div>
-                <img src="">
+                <img {if isset($info.pic_url)}src="{$info.pic_url}"{else}src="app/View/static/img/100.jpg"{/if} alt="banner picture" id="img"  class="add_banner" >
+                <input type="hidden" id="file" name="file" {if isset($info.pic_url)}value="{$info.pic_url}"{/if}>
             </div>
         </div>
 
         <div class="form-group row">
             <label for="order" class="col-sm-2 col-form-label">order:</label>
             <div class="col-sm-10">
-                <input type="number" id="order" class="form-control form-control-sm" min="0" max="99" placeholder="order by ASC">
+                <input type="number" id="order" class="form-control form-control-sm" min="0" max="99" name="order" placeholder="order by ASC" {if isset($info.order_by)}value="{$info.order_by}"{/if}>
             </div>
         </div>
         <fieldset class="form-group">
@@ -32,13 +33,13 @@
                 <legend class="col-form-label col-sm-2 pt-0">Is Show?</legend>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="show" id="not_show" value="0" checked>
+                        <input class="form-check-input" type="radio" name="show" id="not_show" value="0" {if !isset($info.is_show) or $info.is_show eq 0}checked{/if}>
                         <label class="form-check-label" for="not_show">
                             No
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="show" id="show" value="1">
+                        <input class="form-check-input" type="radio" name="show" id="show" value="1" {if $info.is_show eq 1}checked{/if}>
                         <label class="form-check-label" for="show">
                             yes
                         </label>
@@ -49,15 +50,34 @@
         <div class="form-group row">
             <label for="link" class="col-sm-2 col-form-label">link:</label>
             <div class="col-sm-10">
-                <input type="text" id="link" class="form-control form-control-sm" name="link">
+                <input type="text" id="link" class="form-control form-control-sm" name="link" {if $info.link} value="{$info.link}" {/if}>
             </div>
         </div>
         {if isset($info)}
         <input type="hidden" class="form-control" id="id" name="id" value="{$info.id}">
         {/if}
-        <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>
+        <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
 </div>
 {include "static/footer.html"}
+<script type="text/javascript">
+    function upload() {
+        var optios={
+            url:"?r=Admin/uploadBanner",
+            type:'POST',
+            dataType:'json',
+            success:function (data) {
+                if(data.code==0){
+                    alert(data.msg)
+                }else {
+                    alert(data.msg)
+                    $('#img').attr('src',data.url);
+                    $('#file').attr('value',data.url);
+                }
+            }
+        }
+        $("#form").ajaxSubmit(optios)
+    }
+</script>
 </body>
 </html>

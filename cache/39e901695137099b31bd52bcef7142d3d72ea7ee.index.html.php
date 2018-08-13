@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-10 03:44:42
+/* Smarty version 3.1.32, created on 2018-08-13 03:39:55
   from 'D:\phpStudy\WWW\lazy\app\View\Index\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6d0a2aee2f00_15442458',
+  'unifunc' => 'content_5b70fd8bc60c01_08719000',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -42,13 +42,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'a92825ce6e6cc406087c05ac96926c8505c198dd' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_js.html',
-      1 => 1533535381,
+      1 => 1534125235,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6d0a2aee2f00_15442458 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b70fd8bc60c01_08719000 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -189,7 +189,7 @@ function content_5b6d0a2aee2f00_15442458 (Smarty_Internal_Template $_smarty_tpl)
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="app/View/static/js/wangEditor.min.js"></script>
-
+<script src="app/View/static/js/jquery.form.js"></script>
 </body>
 </html><?php }
 }

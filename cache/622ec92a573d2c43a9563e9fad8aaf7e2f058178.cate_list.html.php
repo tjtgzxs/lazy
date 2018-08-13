@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-06 08:09:52
+/* Smarty version 3.1.32, created on 2018-08-13 07:55:03
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\cate_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b68025064d484_61771319',
+  'unifunc' => 'content_5b7139578c2f86_66061985',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,13 +24,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'e5e52b497183dd63357d21a1d1cedc5498e64466' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_css.html',
-      1 => 1533535381,
+      1 => 1534144295,
       2 => 'file',
     ),
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\admin_nav.html',
-      1 => 1533536514,
+      1 => 1533804503,
       2 => 'file',
     ),
     '11367b371eea48768b2151d04bac0d54ae065700' => 
@@ -42,13 +42,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'a92825ce6e6cc406087c05ac96926c8505c198dd' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_js.html',
-      1 => 1533535381,
+      1 => 1534125235,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b68025064d484_61771319 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7139578c2f86_66061985 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,7 +84,18 @@ function content_5b68025064d484_61771319 (Smarty_Internal_Template $_smarty_tpl)
                     Article
                 </a>
                 <div class="dropdown-menu" aria-labelledby="MenuLink2">
-                    <a class="dropdown-item" href="#">Article List</a>
+                    <a class="dropdown-item" href="?r=admin/getArticleList">Article List</a>
+                    <a class="dropdown-item" href="?r=admin/addArticle">Add Article</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="MenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    index
+                </a>
+                <div class="dropdown-menu" aria-labelledby="MenuLink3">
+                    <a class="dropdown-item" href="?r=admin/getBannerList">banner</a>
                     <a class="dropdown-item" href="?r=admin/addArticle">Add Article</a>
                 </div>
             </li>
@@ -96,17 +107,15 @@ function content_5b68025064d484_61771319 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 </nav>  <a href="?r=admin/addCategory&id=1"><li>PHP</li></a><a onclick="del(1)">delete</a>
   <a  href="?r=admin/addCategory&id=2">Laravel</a><a onclick="del(2)">delete</a>
-  <a  href="?r=admin/addCategory&id=24">CI</a><a onclick="del(24)">delete</a>
   <a  href="?r=admin/addCategory&id=25">CI</a><a onclick="del(25)">delete</a>
 <a href="?r=admin/addCategory&id=4"><li>database</li></a><a onclick="del(4)">delete</a>
-  <a  href="?r=admin/addCategory&id=3">predis</a><a onclick="del(3)">delete</a>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="app/View/static/js/wangEditor.min.js"></script>
-
+<script src="app/View/static/js/jquery.form.js"></script>
 <script type="text/javascript">
     function del(id) {
         var check=confirm('Are you sure delete this category? ');

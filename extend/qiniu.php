@@ -25,19 +25,20 @@ class qiniu
     /**
      * upload function
      * @param $img
+     * @param $type
      * @return array
      * @throws \Exception
      */
-    public function upload($img){
+    public function upload($img,$type){
         $img_array=explode('.',$img);
-        $key=date('Y-m-d',time()).'-'.uniqid().end($img_array);
+        $key=date('Y-m-d',time()).'-'.uniqid();
         $uploadMgr=new UploadManager();
         list($ret,$err)=$uploadMgr->putFile($this->token,$key,$img);
         if($err!==null){
-            return['result'=>0,'ret'=>$ret,'err'=>$err];
+            return['result'=>0,'url'=>'','ret'=>$ret,'msg'=>$err];
         }else{
             unset($img);//delete local image
-            return['result'=>1,'ret'=>$ret,'err'=>$err];
+            return['result'=>1,'url'=>QINIU_URL.$ret['key'],'ret'=>$ret,'msg'=>'上传成功'];
         }
     }
 
