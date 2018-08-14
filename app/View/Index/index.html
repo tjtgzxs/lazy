@@ -4,34 +4,23 @@
 
 <!--<div class="jumbotron ">-->
     <!--<div class="container">-->
+        {if isset($banners)}
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                {foreach $banners as $k=>$v}
+                <li data-target="#carouselExampleIndicators" data-slide-to="{$k}" {if $k eq 0}class="active"{/if}></li>
+                {/foreach}
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="{__IMG__}l1.jpg" alt="First slide">
+                {foreach $banners as $k=>$v}
+                <div class="carousel-item {if $k eq 0} active{/if}">
+                    <img class="d-block w-100" src="{$v.pic_url}" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                        <h5>{$v.pic_title}</h5>
+
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{__IMG__}l2.jpg" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{__IMG__}l3.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
-                    </div>
-                </div>
+                {/foreach}
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -42,6 +31,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        {/if}
     <!--</div>-->
 <!--</div>-->
 <div class="container">

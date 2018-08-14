@@ -18,11 +18,10 @@ class IndexController extends BaseController
     }
 
     public function IndexAction(){
-//        $redis=new Client();
-////        echo phpinfo();die();
-////         $model=new \Model\IndexModel();
+         $m=new IndexModel();
+         $banners=$m->getAll('lazy_banner','*',['is_del'=>0,'is_show'=>1],['order_by'=>'ASC']);
          $this->assign('title','Welcome to Lazy Blog');
-         $this->assign('k',2);
+         $this->assign('banners',$banners);
          $this->render();
 //       $this->render(['k'=>1]);
     }

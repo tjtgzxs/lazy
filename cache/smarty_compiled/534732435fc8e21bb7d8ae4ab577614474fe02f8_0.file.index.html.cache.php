@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-02 02:02:46
+/* Smarty version 3.1.32, created on 2018-08-14 07:28:44
   from 'D:\phpStudy\WWW\lazy\app\View\Index\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b626646cb1395_07941943',
+  'unifunc' => 'content_5b7284ac05f503_37449260',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '534732435fc8e21bb7d8ae4ab577614474fe02f8' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Index\\index.html',
-      1 => 1533106237,
+      1 => 1534231721,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../static/footer.html' => 1,
   ),
 ),false)) {
-function content_5b626646cb1395_07941943 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '109075b626646c63197_10042252';
+function content_5b7284ac05f503_37449260 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '292125b7284abeff749_30822235';
 $_smarty_tpl->_subTemplateRender('file:../static/header.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0, false);
 ?>
 <body>
@@ -33,37 +33,40 @@ $_smarty_tpl->_subTemplateRender('file:../static/header.html', $_smarty_tpl->cac
 
 <!--<div class="jumbotron ">-->
     <!--<div class="container">-->
+        <?php if (isset($_smarty_tpl->tpl_vars['banners']->value)) {?>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['banners']->value, 'v', false, 'k');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
+?>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $_smarty_tpl->tpl_vars['k']->value;?>
+" <?php if ($_smarty_tpl->tpl_vars['k']->value == 0) {?>class="active"<?php }?>></li>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="<?php echo __IMG__;?>
-l1.jpg" alt="First slide">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['banners']->value, 'v', false, 'k');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
+?>
+                <div class="carousel-item <?php if ($_smarty_tpl->tpl_vars['k']->value == 0) {?> active<?php }?>">
+                    <img class="d-block w-100" src="<?php echo $_smarty_tpl->tpl_vars['v']->value['pic_url'];?>
+" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                        <h5><?php echo $_smarty_tpl->tpl_vars['v']->value['pic_title'];?>
+</h5>
+
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="<?php echo __IMG__;?>
-l2.jpg" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="<?php echo __IMG__;?>
-l3.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
-                    </div>
-                </div>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -74,6 +77,7 @@ l3.jpg" alt="Third slide">
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        <?php }?>
     <!--</div>-->
 <!--</div>-->
 <div class="container">

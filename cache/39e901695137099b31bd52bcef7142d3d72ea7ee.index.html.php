@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-13 03:39:55
+/* Smarty version 3.1.32, created on 2018-08-14 07:28:44
   from 'D:\phpStudy\WWW\lazy\app\View\Index\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b70fd8bc60c01_08719000',
+  'unifunc' => 'content_5b7284ac080848_54959957',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '534732435fc8e21bb7d8ae4ab577614474fe02f8' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Index\\index.html',
-      1 => 1533106237,
+      1 => 1534231721,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'e5e52b497183dd63357d21a1d1cedc5498e64466' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_css.html',
-      1 => 1533535381,
+      1 => 1534144295,
       2 => 'file',
     ),
     'fd8075acc371ca325a1719faf32a40d345a6bb28' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b70fd8bc60c01_08719000 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7284ac080848_54959957 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,35 +90,27 @@ function content_5b70fd8bc60c01_08719000 (Smarty_Internal_Template $_smarty_tpl)
 </nav>
 <!--<div class="jumbotron ">-->
     <!--<div class="container">-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
+                            </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="app\View\static\img\l1.jpg" alt="First slide">
+                                <div class="carousel-item  active">
+                    <img class="d-block w-100" src="http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b713a819b140" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                        <h5>1213</h5>
+
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="app\View\static\img\l2.jpg" alt="Second slide">
+                                <div class="carousel-item ">
+                    <img class="d-block w-100" src="http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b714089a2288" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                        <h5>222-</h5>
+
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="app\View\static\img\l3.jpg" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
-                    </div>
-                </div>
-            </div>
+                            </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -128,7 +120,7 @@ function content_5b70fd8bc60c01_08719000 (Smarty_Internal_Template $_smarty_tpl)
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    <!--</div>-->
+            <!--</div>-->
 <!--</div>-->
 <div class="container">
     <div class="card-group">
