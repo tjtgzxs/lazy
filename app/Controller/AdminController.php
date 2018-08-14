@@ -136,6 +136,9 @@ class AdminController extends BaseController
         }
     }
 
+    /**
+     * delete article action
+     */
     public function deleteArticleAction(){
         $id=$_GET['id'];
         $m=new AdminModel();
@@ -228,7 +231,7 @@ class AdminController extends BaseController
     }
 
     /**
-     * 获取文章列表
+     * get article list
      */
     public function getArticleListAction(){
         $m=new AdminModel();
@@ -273,6 +276,9 @@ class AdminController extends BaseController
         }
     }
 
+    /**
+     * add banner
+     */
     public function addBannerAction(){
         $m=new AdminModel();
         if(!empty($_GET['id'])){
@@ -283,6 +289,9 @@ class AdminController extends BaseController
         $this->render("add_banner");
     }
 
+    /**
+     * insert banner
+     */
     public function insertBannerAction(){
         $m=new AdminModel();
         $arr=[];
@@ -304,7 +313,7 @@ class AdminController extends BaseController
     }
 
     /**
-     * 上传banner 图
+     * upload banner in admin sys
      */
     public function uploadBannerAction(){
         $file=$_FILES['bannerFile'];
