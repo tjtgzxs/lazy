@@ -32,13 +32,18 @@ class AdminController extends BaseController
      */
     public function judgeAction(){
         session_start();
+        if(!empty($_SESSION['a_info'])){
+            $this->assign('info',$_SESSION['a_info']);
+            $this->assign('title','manage');
+            $this->render('index');
+        }
         if($_POST['user']==111){
             $_SESSION['a_info']=['user'=>'admin','email'=>'email@email.com'];
             $this->assign('info',$_SESSION['a_info']);
             $this->assign('title','manage');
             $this->render('index');
-
         }
+
         //confirm current time
         $now=date("Y-m-d H:i:s",time());
         //check user email and password
@@ -96,6 +101,8 @@ class AdminController extends BaseController
             $this->assign('pid',$info['parent_id']);
             $this->assign('name',$info['name']);
             $this->assign('title','editCategory');
+            $this->assign('img_url',$info['img_url']);
+            $this->assign('is_show',$info['is_show']);
         }
         $this->render();
     }
@@ -109,10 +116,12 @@ class AdminController extends BaseController
         $name=$_POST['name'];
         $arr['parent_id']=$pid;
         $arr['name']=$name;
+        $arr['img_url']=$_POST['file'];
+        $arr['is_show']=$_POST['show'];
         if(!empty($_POST['id'])){
            //update
-          $result=$m->updateCate($_POST['id'],$arr);
-
+//          $result=$m->updateCate($_POST['id'],$arr);
+            $result=$m->updateTable('lazy_cate',$_POST['id'],$arr);
         }else{
             //insert
              $result=$m->addCategory($arr);
@@ -317,6 +326,12 @@ class AdminController extends BaseController
      */
     public function uploadBannerAction(){
         $file=$_FILES['bannerFile'];
+        $up=CommonFunction::upload($file);
+        echo json_encode($up);die();
+    }
+
+    public function uploadImgAction(){
+        $file=$_FILES[$_POST['fileName']];
         $up=CommonFunction::upload($file);
         echo json_encode($up);die();
     }

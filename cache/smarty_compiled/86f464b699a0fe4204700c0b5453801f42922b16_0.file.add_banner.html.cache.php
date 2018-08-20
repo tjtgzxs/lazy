@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-13 08:24:22
+/* Smarty version 3.1.32, created on 2018-08-20 08:49:25
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\add_banner.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b71403694bb07_81546489',
+  'unifunc' => 'content_5b7a80959fdd01_66891669',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86f464b699a0fe4204700c0b5453801f42922b16' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\add_banner.html',
-      1 => 1534148660,
+      1 => 1534754963,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:static/footer.html' => 1,
   ),
 ),false)) {
-function content_5b71403694bb07_81546489 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '21275b7140368bb286_71859212';
+function content_5b7a80959fdd01_66891669 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '84335b7a809591f284_20786694';
 $_smarty_tpl->_subTemplateRender("file:static/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0, false);
 ?>
 <body>
@@ -72,7 +72,7 @@ $_smarty_tpl->_subTemplateRender("file:static/header.html", $_smarty_tpl->cache_
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="show" id="show" value="1" <?php if ($_smarty_tpl->tpl_vars['info']->value['is_show'] == 1) {?>checked<?php }?>>
+                        <input class="form-check-input" type="radio" name="show" id="show" value="1" <?php if (isset($_smarty_tpl->tpl_vars['info']->value['is_show']) && $_smarty_tpl->tpl_vars['info']->value['is_show'] == 1) {?>checked<?php }?>>
                         <label class="form-check-label" for="show">
                             yes
                         </label>
@@ -83,7 +83,7 @@ $_smarty_tpl->_subTemplateRender("file:static/header.html", $_smarty_tpl->cache_
         <div class="form-group row">
             <label for="link" class="col-sm-2 col-form-label">link:</label>
             <div class="col-sm-10">
-                <input type="text" id="link" class="form-control form-control-sm" name="link" <?php if ($_smarty_tpl->tpl_vars['info']->value['link']) {?> value="<?php echo $_smarty_tpl->tpl_vars['info']->value['link'];?>
+                <input type="text" id="link" class="form-control form-control-sm" name="link" <?php if (isset($_smarty_tpl->tpl_vars['info']->value['link'])) {?> value="<?php echo $_smarty_tpl->tpl_vars['info']->value['link'];?>
 " <?php }?>>
             </div>
         </div>

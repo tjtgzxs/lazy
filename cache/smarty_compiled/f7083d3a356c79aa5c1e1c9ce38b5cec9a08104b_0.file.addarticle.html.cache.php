@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-08 06:10:21
+/* Smarty version 3.1.32, created on 2018-08-15 03:24:37
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\addarticle.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6a894d148f08_28512928',
+  'unifunc' => 'content_5b739cf51f5958_11214039',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7083d3a356c79aa5c1e1c9ce38b5cec9a08104b' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\addarticle.html',
-      1 => 1533708618,
+      1 => 1534302932,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:static/footer.html' => 1,
   ),
 ),false)) {
-function content_5b6a894d148f08_28512928 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '221245b6a894d095405_51351485';
+function content_5b739cf51f5958_11214039 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '43845b739cf5122a50_45970093';
 $_smarty_tpl->_subTemplateRender("file:static/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 9999, $_smarty_tpl->cache_lifetime, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0, false);
 ?>
 <body>
@@ -65,10 +65,7 @@ echo $_smarty_tpl->tpl_vars['second']->value;
             <input type="text" name="title"  id="title" class="form-control form-control-sm" <?php if (isset($_smarty_tpl->tpl_vars['article_title']->value)) {?> value="<?php echo $_smarty_tpl->tpl_vars['article_title']->value;?>
 "<?php }?>>
         </div>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose image</label>
-        </div>
+
         <div class="form-group">
             <div id="editor">
                <?php if (isset($_smarty_tpl->tpl_vars['content']->value)) {

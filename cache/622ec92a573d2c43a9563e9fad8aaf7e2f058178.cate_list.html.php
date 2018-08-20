@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-13 07:55:03
+/* Smarty version 3.1.32, created on 2018-08-20 09:26:55
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\cate_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7139578c2f86_66061985',
+  'unifunc' => 'content_5b7a895fe82106_89351335',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b7139578c2f86_66061985 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7a895fe82106_89351335 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,7 +105,7 @@ function content_5b7139578c2f86_66061985 (Smarty_Internal_Template $_smarty_tpl)
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-</nav>  <a href="?r=admin/addCategory&id=1"><li>PHP</li></a><a onclick="del(1)">delete</a>
+</nav>  <a href="?r=admin/addCategory&id=1"><li>php</li></a><a onclick="del(1)">delete</a>
   <a  href="?r=admin/addCategory&id=2">Laravel</a><a onclick="del(2)">delete</a>
   <a  href="?r=admin/addCategory&id=25">CI</a><a onclick="del(25)">delete</a>
 <a href="?r=admin/addCategory&id=4"><li>database</li></a><a onclick="del(4)">delete</a>

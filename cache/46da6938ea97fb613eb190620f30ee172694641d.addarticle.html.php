@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-09 09:15:54
+/* Smarty version 3.1.32, created on 2018-08-15 03:24:37
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\addarticle.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6c064a242e97_25511398',
+  'unifunc' => 'content_5b739cf521ca50_39687894',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7083d3a356c79aa5c1e1c9ce38b5cec9a08104b' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\addarticle.html',
-      1 => 1533708618,
+      1 => 1534302932,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'e5e52b497183dd63357d21a1d1cedc5498e64466' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_css.html',
-      1 => 1533535381,
+      1 => 1534144295,
       2 => 'file',
     ),
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
@@ -42,13 +42,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'a92825ce6e6cc406087c05ac96926c8505c198dd' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_js.html',
-      1 => 1533535381,
+      1 => 1534125235,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6c064a242e97_25511398 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b739cf521ca50_39687894 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,18 +124,14 @@ function content_5b6c064a242e97_25511398 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <div class="form-group">
             <label for="title">title:</label>
-            <input type="text" name="title"  id="title" class="form-control form-control-sm"  value="How to start Lavarel with redis --2">
+            <input type="text" name="title"  id="title" class="form-control form-control-sm" >
         </div>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose image</label>
-        </div>
+
         <div class="form-group">
             <div id="editor">
-               <p><span style="background-color: rgb(28, 72, 127);">adasdasd</span></p><p><br></p>            </div>
+                           </div>
         </div>
         <input type="hidden" class="form-control" id="text" name="text" value="">
-                <input type="hidden" class="form-control" id="id" name="id" value="1">
                 <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>
     </form>
 </div>
@@ -145,7 +141,7 @@ function content_5b6c064a242e97_25511398 (Smarty_Internal_Template $_smarty_tpl)
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="app/View/static/js/wangEditor.min.js"></script>
-
+<script src="app/View/static/js/jquery.form.js"></script>
 <script type="text/javascript">
     var E = window.wangEditor
     var editor = new E('#editor')

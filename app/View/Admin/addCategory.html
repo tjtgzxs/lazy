@@ -2,7 +2,7 @@
 <body>
 {include "Admin/admin_nav.html"}
 <div class="container">
-<form method="post" action="?r=admin/insert">
+<form method="post" action="?r=admin/insert" id="form">
     {if isset($id)}
     <div class="form-group">
         <label>id:</label>
@@ -22,6 +22,31 @@
         <label for="name">category name:</label>
         <input type="text" class="form-control" id="name" {if isset($name)} value="{$name}"{/if} aria-describedby="name" name="name" placeholder="Enter category name">
     </div>
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile" name="imageUpload" onchange="upload()">
+        <label class="custom-file-label" for="customFile">Choose image</label>
+        <img {if isset($img_url)}src="{$img_url}"{else}src="app/View/static/img/100.jpg"{/if} alt="category picture" id="img"  class="add_banner" >
+        <input type="hidden" id="file" name="file" {if isset($img_url)}value="{$img_url}"{/if}>
+    </div>
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Is Show?</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="show" id="not_show" value="0" {if !isset($is_show) or $is_show eq 0}checked{/if}>
+                    <label class="form-check-label" for="not_show">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="show" id="show" value="1" {if isset($is_show)&& $is_show eq 1}checked{/if}>
+                    <label class="form-check-label" for="show">
+                        yes
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
     {if isset($id)}
     <input type="hidden" class="form-control" id="id" name="id" value="{$id}">
     {/if}
@@ -29,5 +54,23 @@
 </form>
 </div>
 {include "static/footer.html"}
+<script type="text/javascript">
+    function upload() {
+        var options={
+            url:"?r=Admin/uploadImg",
+            type:"POST",
+            data:{
+                'fileName':'imageUpload'
+            },
+            dataType:"JSON",
+            success:function (data) {
+                alert(data.msg)
+                $('#img').attr('src',data.url);
+                $('#file').attr('value',data.url);
+            }
+        };
+        $("#form").ajaxSubmit(options);
+    }
+</script>
 </body>
 </html>

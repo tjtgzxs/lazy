@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-14 07:28:44
+/* Smarty version 3.1.32, created on 2018-08-20 08:51:06
   from 'D:\phpStudy\WWW\lazy\app\View\Index\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7284ac080848_54959957',
+  'unifunc' => 'content_5b7a80fab55909_65673972',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '534732435fc8e21bb7d8ae4ab577614474fe02f8' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Index\\index.html',
-      1 => 1534231721,
+      1 => 1534231785,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b7284ac080848_54959957 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7a80fab55909_65673972 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,24 +87,21 @@ function content_5b7284ac080848_54959957 (Smarty_Internal_Template $_smarty_tpl)
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
-</nav>
-<!--<div class="jumbotron ">-->
-    <!--<div class="container">-->
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+</nav>                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
                             </ol>
             <div class="carousel-inner">
                                 <div class="carousel-item  active">
-                    <img class="d-block w-100" src="http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b713a819b140" alt="First slide">
+                    <img class="d-block w-100" src="http://pd8uga5a3.bkt.gdipper.com/2018-08-15-5b739c225a2fd" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>1213</h5>
 
                     </div>
                 </div>
                                 <div class="carousel-item ">
-                    <img class="d-block w-100" src="http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b714089a2288" alt="First slide">
+                    <img class="d-block w-100" src="http://pd8uga5a3.bkt.gdipper.com/2018-08-15-5b739c3b96005" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>222-</h5>
 
@@ -120,9 +117,7 @@ function content_5b7284ac080848_54959957 (Smarty_Internal_Template $_smarty_tpl)
                 <span class="sr-only">Next</span>
             </a>
         </div>
-            <!--</div>-->
-<!--</div>-->
-<div class="container">
+        <div class="container">
     <div class="card-group">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="app\View\static\img\fang.jpg" alt="Card image cap">

@@ -9,6 +9,10 @@ namespace Model;
 use Lazy\BaseModel;
 class IndexModel extends BaseModel
 {
+    /**
+     *
+     * @return int
+     */
     public function index(){
         $result=$this->insert('test',['value'=>'11111']);
         return $result;

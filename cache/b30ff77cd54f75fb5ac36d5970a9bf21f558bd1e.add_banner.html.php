@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-13 08:26:06
+/* Smarty version 3.1.32, created on 2018-08-20 08:51:23
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\add_banner.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b71409e168286_65252773',
+  'unifunc' => 'content_5b7a810b045881_27233848',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '86f464b699a0fe4204700c0b5453801f42922b16' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\add_banner.html',
-      1 => 1534148660,
+      1 => 1534754963,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b71409e168286_65252773 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7a810b045881_27233848 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,7 +111,7 @@ function content_5b71409e168286_65252773 (Smarty_Internal_Template $_smarty_tpl)
         <div class="form-group row">
             <label for="title" class="col-sm-2 col-form-label">title:</label>
             <div class="col-sm-10">
-            <input type="text" id="title" class="form-control form-control-sm"   value="222-" name="title">
+            <input type="text" id="title" class="form-control form-control-sm" name="title">
             </div>
         </div>
         <div class="form-group row">
@@ -121,15 +121,15 @@ function content_5b71409e168286_65252773 (Smarty_Internal_Template $_smarty_tpl)
                     <input type="file" class="custom-file-input" id="customFile" name="bannerFile" onchange="upload()">
                     <label class="custom-file-label" for="customFile">Choose image</label>
                 </div>
-                <img src="http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b714089a2288" alt="banner picture" id="img"  class="add_banner" >
-                <input type="hidden" id="file" name="file" value="http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b714089a2288">
+                <img src="app/View/static/img/100.jpg" alt="banner picture" id="img"  class="add_banner" >
+                <input type="hidden" id="file" name="file" >
             </div>
         </div>
 
         <div class="form-group row">
             <label for="order" class="col-sm-2 col-form-label">order:</label>
             <div class="col-sm-10">
-                <input type="number" id="order" class="form-control form-control-sm" min="0" max="99" name="order" placeholder="order by ASC" value="7">
+                <input type="number" id="order" class="form-control form-control-sm" min="0" max="99" name="order" placeholder="order by ASC" >
             </div>
         </div>
         <fieldset class="form-group">
@@ -137,13 +137,13 @@ function content_5b71409e168286_65252773 (Smarty_Internal_Template $_smarty_tpl)
                 <legend class="col-form-label col-sm-2 pt-0">Is Show?</legend>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="show" id="not_show" value="0" >
+                        <input class="form-check-input" type="radio" name="show" id="not_show" value="0" checked>
                         <label class="form-check-label" for="not_show">
                             No
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="show" id="show" value="1" checked>
+                        <input class="form-check-input" type="radio" name="show" id="show" value="1" >
                         <label class="form-check-label" for="show">
                             yes
                         </label>
@@ -154,10 +154,9 @@ function content_5b71409e168286_65252773 (Smarty_Internal_Template $_smarty_tpl)
         <div class="form-group row">
             <label for="link" class="col-sm-2 col-form-label">link:</label>
             <div class="col-sm-10">
-                <input type="text" id="link" class="form-control form-control-sm" name="link"  value="https://www.baidu.com/1" >
+                <input type="text" id="link" class="form-control form-control-sm" name="link" >
             </div>
         </div>
-                <input type="hidden" class="form-control" id="id" name="id" value="3">
                 <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
 </div>

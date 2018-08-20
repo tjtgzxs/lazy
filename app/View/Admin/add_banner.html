@@ -39,7 +39,7 @@
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="show" id="show" value="1" {if $info.is_show eq 1}checked{/if}>
+                        <input class="form-check-input" type="radio" name="show" id="show" value="1" {if isset($info.is_show) && $info.is_show eq 1}checked{/if}>
                         <label class="form-check-label" for="show">
                             yes
                         </label>
@@ -50,7 +50,7 @@
         <div class="form-group row">
             <label for="link" class="col-sm-2 col-form-label">link:</label>
             <div class="col-sm-10">
-                <input type="text" id="link" class="form-control form-control-sm" name="link" {if $info.link} value="{$info.link}" {/if}>
+                <input type="text" id="link" class="form-control form-control-sm" name="link" {if isset($info.link)} value="{$info.link}" {/if}>
             </div>
         </div>
         {if isset($info)}

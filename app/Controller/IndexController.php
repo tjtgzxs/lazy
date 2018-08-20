@@ -20,6 +20,7 @@ class IndexController extends BaseController
     public function IndexAction(){
          $m=new IndexModel();
          $banners=$m->getAll('lazy_banner','*',['is_del'=>0,'is_show'=>1],['order_by'=>'ASC']);
+         
          $this->assign('title','Welcome to Lazy Blog');
          $this->assign('banners',$banners);
          $this->render();

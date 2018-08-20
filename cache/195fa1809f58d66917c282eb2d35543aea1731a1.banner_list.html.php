@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-13 08:25:58
+/* Smarty version 3.1.32, created on 2018-08-20 08:51:20
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\banner_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b71409641b902_79821785',
+  'unifunc' => 'content_5b7a8108e37d82_50023255',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -54,7 +54,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b71409641b902_79821785 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7a8108e37d82_50023255 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,10 +131,10 @@ function content_5b71409641b902_79821785 (Smarty_Internal_Template $_smarty_tpl)
         <tbody>
                 <tr>
             <th scope="row">3</th>
-            <td>http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b714089a2288</td>
+            <td>http://pd8uga5a3.bkt.gdipper.com/2018-08-15-5b739c3b96005</td>
             <td>https://www.baidu.com/1</td>
             <td>1</td>
-            <td>2018-08-13 08:25:57</td>
+            <td>2018-08-15 03:21:38</td>
             <td>
                 <a href="javascript:void" onclick="del(3)">delete</a>
                 <a href="?r=admin/addBanner&id=3">edit</a>
@@ -142,10 +142,10 @@ function content_5b71409641b902_79821785 (Smarty_Internal_Template $_smarty_tpl)
         </tr>
                 <tr>
             <th scope="row">2</th>
-            <td>http://pd8uga5a3.bkt.gdipper.com/2018-08-13-5b713a819b140</td>
+            <td>http://pd8uga5a3.bkt.gdipper.com/2018-08-15-5b739c225a2fd</td>
             <td>https://www.wftcpc.com/</td>
             <td>1</td>
-            <td>2018-08-13 08:09:09</td>
+            <td>2018-08-15 03:21:18</td>
             <td>
                 <a href="javascript:void" onclick="del(2)">delete</a>
                 <a href="?r=admin/addBanner&id=2">edit</a>
