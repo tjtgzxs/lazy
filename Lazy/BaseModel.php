@@ -60,7 +60,12 @@ class BaseModel extends \PDO
         if(is_array($where)){
             $where_string="";
             foreach ($where as $k=>$v){
-                $where_string.="$k=$v";
+                if(!is_array($v)){
+                    $where_string.="$k=$v";
+
+                }else{
+                   $where_string.="$k in (".implode(',',$v).") ";
+                }
                 if($v!=end($where)){
                     $where_string.=" AND ";
                 }
@@ -108,9 +113,14 @@ class BaseModel extends \PDO
      */
     public function getAll($table,$data="*",$where=null,$order=null,$start=null,$limit=null){
         $sql=$this->generateSelectSql($table,$data,$where,$order,$start,$limit);
-        $stmt=$this->db->query($sql);
-        $arr=$stmt->fetchAll(\PDO::FETCH_ASSOC);
-        return $arr;
+        try{
+            $stmt=$this->db->query($sql);
+            $arr=$stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $arr;
+        }catch (\PDOException $exception){
+            var_dump($exception->errorInfo);
+        }
+
     }
     public function getOne($table,$data="*",$where=null){
         $sql=$this->generateSelectSql($table,$data,$where);

@@ -209,11 +209,7 @@ class AdminController extends BaseController
         }
         $m=new AdminModel();
         $list=$m->getAllCategory(['parent_id'=>$pid]);
-        if(empty($list)){
-            echo json_encode(['code'=>0,'msg'=>'change fail']);die();
-        }else{
-            echo json_encode(['code'=>1,'msg'=>'change success','data'=>$list]);die();
-        }
+         echo json_encode(['code'=>1,'msg'=>'change success','data'=>$list]);die();
     }
 
     /**

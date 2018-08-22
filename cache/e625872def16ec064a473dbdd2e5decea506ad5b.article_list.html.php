@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-09 09:01:46
+/* Smarty version 3.1.32, created on 2018-08-22 08:33:40
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\article_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6c02fa7cce13_07092115',
+  'unifunc' => 'content_5b7d1fe4363f80_37566078',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'e5e52b497183dd63357d21a1d1cedc5498e64466' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_css.html',
-      1 => 1533535381,
+      1 => 1534144295,
       2 => 'file',
     ),
     '031e8631566fe1bcae177e1161bde04dcfc06dff' => 
@@ -48,13 +48,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'a92825ce6e6cc406087c05ac96926c8505c198dd' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_js.html',
-      1 => 1533535381,
+      1 => 1534125235,
       2 => 'file',
     ),
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b6c02fa7cce13_07092115 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7d1fe4363f80_37566078 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,6 +123,24 @@ function content_5b6c02fa7cce13_07092115 (Smarty_Internal_Template $_smarty_tpl)
         </thead>
         <tbody>
                 <tr>
+            <th scope="row">5</th>
+            <td>How to start php</td>
+            <td>2018-08-22 08:33:39</td>
+            <td>
+                <a href="javascript:void" onclick="del(5)">delete</a>
+                <a href="?r=admin/addArticle&id=5">edit</a>
+            </td>
+        </tr>
+                <tr>
+            <th scope="row">4</th>
+            <td>New Lavarel</td>
+            <td>2018-08-22 08:33:14</td>
+            <td>
+                <a href="javascript:void" onclick="del(4)">delete</a>
+                <a href="?r=admin/addArticle&id=4">edit</a>
+            </td>
+        </tr>
+                <tr>
             <th scope="row">1</th>
             <td>How to start Lavarel with redis --2</td>
             <td>2018-08-08 03:38:32</td>
@@ -147,7 +165,7 @@ function content_5b6c02fa7cce13_07092115 (Smarty_Internal_Template $_smarty_tpl)
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="app/View/static/js/wangEditor.min.js"></script>
-
+<script src="app/View/static/js/jquery.form.js"></script>
 <script type="text/javascript">
     function del(id) {
         var check=confirm('Are you sure delete this article? ');

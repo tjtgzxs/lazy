@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-15 03:24:37
+/* Smarty version 3.1.32, created on 2018-08-22 09:02:30
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\addarticle.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b739cf521ca50_39687894',
+  'unifunc' => 'content_5b7d26a6659c89_12511438',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b739cf521ca50_39687894 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7d26a6659c89_12511438 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,7 +112,7 @@ function content_5b739cf521ca50_39687894 (Smarty_Internal_Template $_smarty_tpl)
             <label for="top_category">top category:</label>
             <select id="top_category" class="form-control form-control-sm" name="top_cate">
                 <option value="0">without category</option>
-                                <option value="1" >PHP</option>
+                                <option value="1" >php</option>
                                 <option value="4" >database</option>
                             </select>
         </div>

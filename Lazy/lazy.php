@@ -8,9 +8,9 @@
  */
 namespace Lazy;
 require COMMON.'CommonFunction.php';
-require COMMON.'Constant.php';
 require BASE.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 CommonFunction::format_config(require CONF.'config.php');
+require COMMON.'Constant.php';
 require SYS.'Loader.php';
 spl_autoload_register(array('Lazy\Loader','register'));
 require SYS.'Router.php';

@@ -6,7 +6,7 @@
  * Time: 17:47
  */
 define('LIMIT',15);
-
+define('DEFAULT_FANG',__IMG__.'fang.jpg');
 /** REQUEST CONSTANT */
 define('REQUEST_METHOD',$_SERVER['REQUEST_METHOD']);
 define('IS_GET',REQUEST_METHOD=='GET'?true:false);

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-20 09:26:46
+/* Smarty version 3.1.32, created on 2018-08-20 09:29:45
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\addcategory.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7a895672f108_55176821',
+  'unifunc' => 'content_5b7a8a099daa83_96801758',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b7a895672f108_55176821 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7a8a099daa83_96801758 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

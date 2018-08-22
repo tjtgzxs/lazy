@@ -30,49 +30,21 @@
         </div>
         {/if}
 <div class="container">
+    {if isset($arr)}
+    {foreach $arr as $k=>$v}
     <div class="card-group">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{__IMG__}fang.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{$v.img_url}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">{$v.name}</h5>
+                <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{__IMG__}fang.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{__IMG__}fang.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                {if isset($v.article)}
+                {foreach $v.article as $key=>$value}
+                <li class="list-group-item"><a>{$value.title}</a></li>
+                {/foreach}
+                {/if}
             </ul>
             <div class="card-body">
                 <a href="#" class="card-link">Card link</a>
@@ -80,7 +52,8 @@
             </div>
         </div>
     </div>
-
+    {/foreach}
+    {/if}
 </div>
 {include '../static/footer.html'}
 </body>
