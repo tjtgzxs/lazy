@@ -1,0 +1,28 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2018/8/23
+ * Time: 16:34
+ */
+
+namespace Controller;
+
+
+use Lazy\BaseController;
+use Model\ArticleModel;
+
+class ArticleController extends BaseController
+{
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function GetArticleAction(){
+        $m=new ArticleModel();
+        $info=$m->getOne('lazy_article','*',['id'=>$_GET['id']]);
+        var_dump($info);
+    }
+
+}

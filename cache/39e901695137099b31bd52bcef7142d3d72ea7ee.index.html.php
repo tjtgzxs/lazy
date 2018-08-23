@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-22 08:59:40
+/* Smarty version 3.1.32, created on 2018-08-23 08:46:29
   from 'D:\phpStudy\WWW\lazy\app\View\Index\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7d25fcddba80_75243611',
+  'unifunc' => 'content_5b7e7465e2ce88_24222246',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '534732435fc8e21bb7d8ae4ab577614474fe02f8' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Index\\index.html',
-      1 => 1534928378,
+      1 => 1535013987,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b7d25fcddba80_75243611 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7e7465e2ce88_24222246 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,8 +126,8 @@ function content_5b7d25fcddba80_75243611 (Smarty_Internal_Template $_smarty_tpl)
                 <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
             </div>
             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item"><a>How to start php</a></li>
-                                <li class="list-group-item"><a>New Lavarel</a></li>
+                                                <li class="list-group-item"><a href="?r=article/getArticle&id=1">How to start php</a></li>
+                                <li class="list-group-item"><a href="?r=article/getArticle&id=1">New Lavarel</a></li>
                                             </ul>
             <div class="card-body">
                 <a href="#" class="card-link">Card link</a>

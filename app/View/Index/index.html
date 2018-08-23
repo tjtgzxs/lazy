@@ -42,7 +42,7 @@
             <ul class="list-group list-group-flush">
                 {if isset($v.article)}
                 {foreach $v.article as $key=>$value}
-                <li class="list-group-item"><a>{$value.title}</a></li>
+                <li class="list-group-item"><a href="?r=article/getArticle&id={$v.id}">{$value.title}</a></li>
                 {/foreach}
                 {/if}
             </ul>
