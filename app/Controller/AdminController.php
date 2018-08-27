@@ -170,6 +170,7 @@ class AdminController extends BaseController
           $this->assign('article_title',$info['title']);
           $this->assign('content',$info['content']);
           $this->assign('id',$info['id']);
+          $this->assign('img_url',$info['img_url']);
           //format date
           $cate=$m->getCategory($info['cat_id']);
           $second='';
@@ -226,10 +227,13 @@ class AdminController extends BaseController
         $arr['title']=$_POST['title'];
         $arr['content']=$_POST['text'];
         $arr['update_date']=date('Y-m-d H:i:s',time());
+        $arr['img_url']=$_POST['file'];
         if(empty($_POST['id'])){
-            $result=$m->insertArticle($arr);
+//            $result=$m->insertArticle($arr);
+            $result=$m->insert('lazy_article',$arr);
         }else{
-            $result=$m->updateArticle($_POST['id'],$arr);
+//            $result=$m->updateArticle($_POST['id'],$arr);
+            $result=$m->updateTable('lazy_article',$_POST['id'],$arr);
         }
         header('Location:?r=admin/getArticleList');
         die();

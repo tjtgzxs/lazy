@@ -1,0 +1,30 @@
+{include '../static/header.html' title="{$title}"}
+<body>
+{include '../static/common_nav.html'}
+{if isset($list)}
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+            <th scope="col">update time</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $k=>$v}
+        <tr>
+            <th scope="row">{$v.id}</th>
+            <td><a href="?r=Article/GetArticle&id={$v.id}">{$v.title}</a></td>
+            <td>{$v.update_date}</td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    {include "static/common_page.html"  max="{$max_page}"}
+</div>
+{/if}
+
+{include '../static/footer.html'}
+</body>
+</html>

@@ -6,3 +6,10 @@ admin-add_banner.html
     height: 100px;
     margin: auto 20%;
 }
+
+/**
+addArticle.html
+ */
+#editor-container{
+    margin-top: 50px;
+}

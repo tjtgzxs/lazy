@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-22 09:05:32
+/* Smarty version 3.1.32, created on 2018-08-24 08:38:29
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\article_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7d275cc3d984_62134922',
+  'unifunc' => 'content_5b7fc405df7000_98712393',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -54,7 +54,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b7d275cc3d984_62134922 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7fc405df7000_98712393 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,6 +122,15 @@ function content_5b7d275cc3d984_62134922 (Smarty_Internal_Template $_smarty_tpl)
         </tr>
         </thead>
         <tbody>
+                <tr>
+            <th scope="row">6</th>
+            <td>newPHP status</td>
+            <td>2018-08-24 08:38:28</td>
+            <td>
+                <a href="javascript:void" onclick="del(6)">delete</a>
+                <a href="?r=admin/addArticle&id=6">edit</a>
+            </td>
+        </tr>
                 <tr>
             <th scope="row">5</th>
             <td>How to start php</td>

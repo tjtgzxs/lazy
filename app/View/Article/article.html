@@ -1,10 +1,17 @@
 {include '../static/header.html' title="{$title}"}
 <body>
 {include '../static/common_nav.html'}
- <div c>
-
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+ <div class="carousel-inner">
+  <div class="carousel-item active">
+   <img class="d-block w-100" src="{if isset($info.img_url)}{$info.img_url}{else}{__IMG__}l2.jpg{/if}" alt="First slide">
+  </div>
  </div>
-
+</div>
+<div class="container">
+   <h1>{$info.title}</h1>
+  {$info.content}
+</div>
 {include '../static/footer.html'}
 </body>
 </html>

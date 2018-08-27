@@ -42,13 +42,12 @@
             <ul class="list-group list-group-flush">
                 {if isset($v.article)}
                 {foreach $v.article as $key=>$value}
-                <li class="list-group-item"><a href="?r=article/getArticle&id={$v.id}">{$value.title}</a></li>
+                <li class="list-group-item"><a href="?r=article/getArticle&id={$value.id}">{$value.title}</a></li>
                 {/foreach}
                 {/if}
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <a href="#" class="card-link">More...</a>
             </div>
         </div>
     </div>

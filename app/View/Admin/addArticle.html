@@ -24,8 +24,13 @@
             <label for="title">title:</label>
             <input type="text" name="title"  id="title" class="form-control form-control-sm" {if isset($article_title)} value="{$article_title}"{/if}>
         </div>
-
-        <div class="form-group">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile" name="imageUpload" onchange="upload()">
+            <label class="custom-file-label" for="customFile">Choose image</label>
+            <img {if isset($img_url)}src="{$img_url}"{else}src="app/View/static/img/100.jpg"{/if} alt="category picture" id="img"  class="add_banner" >
+            <input type="hidden" id="file" name="file" {if isset($img_url)}value="{$img_url}"{/if}>
+        </div>
+        <div class="form-group" id="editor-container">
             <div id="editor">
                {if isset($content)}{$content}{/if}
             </div>
@@ -75,7 +80,22 @@
             }
         })
     });
-    
+    function upload() {
+        var options={
+            url:"?r=Admin/uploadImg",
+            type:"POST",
+            data:{
+                'fileName':'imageUpload'
+            },
+            dataType:"JSON",
+            success:function (data) {
+                alert(data.msg)
+                $('#img').attr('src',data.url);
+                $('#file').attr('value',data.url);
+            }
+        };
+        $("#form").ajaxSubmit(options);
+    }
 </script>
 </body>
 </html>

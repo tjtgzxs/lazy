@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-22 09:02:30
+/* Smarty version 3.1.32, created on 2018-08-24 08:45:07
   from 'D:\phpStudy\WWW\lazy\app\View\Admin\addarticle.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7d26a6659c89_12511438',
+  'unifunc' => 'content_5b7fc593373985_05749392',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7083d3a356c79aa5c1e1c9ce38b5cec9a08104b' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Admin\\addarticle.html',
-      1 => 1534302932,
+      1 => 1535099539,
       2 => 'file',
     ),
     '1b6b9c476212ffaeb9c4ca2eb0c31087651bef02' => 
@@ -48,7 +48,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => true,
 ),true)) {
-function content_5b7d26a6659c89_12511438 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b7fc593373985_05749392 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,7 +112,7 @@ function content_5b7d26a6659c89_12511438 (Smarty_Internal_Template $_smarty_tpl)
             <label for="top_category">top category:</label>
             <select id="top_category" class="form-control form-control-sm" name="top_cate">
                 <option value="0">without category</option>
-                                <option value="1" >php</option>
+                                <option value="1" selected>php</option>
                                 <option value="4" >database</option>
                             </select>
         </div>
@@ -120,18 +120,24 @@ function content_5b7d26a6659c89_12511438 (Smarty_Internal_Template $_smarty_tpl)
             <label for="second_category">top category:</label>
             <select id="second_category" class="form-control form-control-sm" name="second_cate">
                 <option value="0">without category</option>
-                            </select>
+                <option value='2' selected  >Laravel</option><option value='25' >CI</option>            </select>
         </div>
         <div class="form-group">
             <label for="title">title:</label>
-            <input type="text" name="title"  id="title" class="form-control form-control-sm" >
+            <input type="text" name="title"  id="title" class="form-control form-control-sm"  value="newPHP status">
         </div>
-
-        <div class="form-group">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile" name="imageUpload" onchange="upload()">
+            <label class="custom-file-label" for="customFile">Choose image</label>
+            <img src="http://pd8uga5a3.bkt.gdipper.com/2018-08-24-5b7fc2f9659c8" alt="category picture" id="img"  class="add_banner" >
+            <input type="hidden" id="file" name="file" value="http://pd8uga5a3.bkt.gdipper.com/2018-08-24-5b7fc2f9659c8">
+        </div>
+        <div class="form-group" id="editor-container">
             <div id="editor">
-                           </div>
+               <p>newPHP status<span style="font-size: 1rem;">newPHP status</span><span style="font-size: 1rem;">newPHP status</span><span style="font-size: 1rem;">newPHP status</span><span style="font-size: 1rem;">newPHP status</span><span style="font-size: 1rem;">newPHP status</span><span style="font-size: 1rem;">newPHP status</span></p>            </div>
         </div>
         <input type="hidden" class="form-control" id="text" name="text" value="">
+                <input type="hidden" class="form-control" id="id" name="id" value="6">
                 <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>
     </form>
 </div>
@@ -179,7 +185,22 @@ function content_5b7d26a6659c89_12511438 (Smarty_Internal_Template $_smarty_tpl)
             }
         })
     });
-    
+    function upload() {
+        var options={
+            url:"?r=Admin/uploadImg",
+            type:"POST",
+            data:{
+                'fileName':'imageUpload'
+            },
+            dataType:"JSON",
+            success:function (data) {
+                alert(data.msg)
+                $('#img').attr('src',data.url);
+                $('#file').attr('value',data.url);
+            }
+        };
+        $("#form").ajaxSubmit(options);
+    }
 </script>
 </body>
 </html><?php }

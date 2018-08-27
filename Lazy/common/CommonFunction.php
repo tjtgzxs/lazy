@@ -52,9 +52,22 @@ class CommonFunction
        $typeArr=explode('/',$file['type']);
        $qn=new qiniu();
        $qiniu=$qn->upload($file['tmp_name'],end($typeArr));
-
        return['code'=>$qiniu['result'],'url'=>$qiniu['url'],'msg'=>$qiniu['msg']];
-
     }
+
+    /**
+     * get cate list
+     * @return array
+     */
+    public static function getList(){
+        $m=new BaseModel();
+        $base=$m->getAll('lazy_cate','*',['is_del'=>0,'parent_id'=>0]);
+        $full=$base;
+        foreach ($full as $k=>$v){
+            $full[$k]['sub_cate']=$m->getAll('lazy_cate','*',['is_del'=>0,'is_show'=>1,'parent_id'=>$v['id']]);
+        }
+        return['base'=>$base,'full'=>$full];
+    }
+
 
 }

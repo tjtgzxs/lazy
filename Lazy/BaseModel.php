@@ -58,6 +58,8 @@ class BaseModel extends \PDO
         //generate which data
         $where_string=$where;
         if(is_array($where)){
+            end($where);
+            $key_last = key($where);
             $where_string="";
             foreach ($where as $k=>$v){
                 if(!is_array($v)){
@@ -66,9 +68,10 @@ class BaseModel extends \PDO
                 }else{
                    $where_string.="$k in (".implode(',',$v).") ";
                 }
-                if($v!=end($where)){
+                if($k!==$key_last){
                     $where_string.=" AND ";
                 }
+
             }
 
         }

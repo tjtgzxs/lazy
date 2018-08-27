@@ -22,7 +22,10 @@ class ArticleController extends BaseController
     public function GetArticleAction(){
         $m=new ArticleModel();
         $info=$m->getOne('lazy_article','*',['id'=>$_GET['id']]);
-        var_dump($info);
+        $this->assign('info',$info);
+        $this->assign('title',$info['title']);
+//        var_dump($info);die();
+        $this->render('article');
     }
 
 }

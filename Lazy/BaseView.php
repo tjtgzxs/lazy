@@ -20,7 +20,7 @@ class BaseView
         self::$smarty->setTemplateDir(APP.'View'.DIRECTORY_SEPARATOR);
         self::$smarty->setCompileDir(CACHE.'smarty_compiled');//定义smarty编译文件的缓存路径
         self::$smarty->debugging=SMARTY_DEBUG;//开启错误控制台
-        self::$smarty->caching=true;//开启缓存
+        self::$smarty->caching=false;//开启缓存
         self::$smarty->cache_lifetime=true;//开启缓存生存时间
     }
 
@@ -36,7 +36,13 @@ class BaseView
         if(empty($view_file)){
             $view_file=strtolower(ACTION);
         }
+        /**
+         * common assignment
+         */
+        $cate=CommonFunction::getList();
+        self::$smarty->assign('base_cate',$cate['base']);
         self::$smarty->assign('__IMG__',__IMG__);
+        self::$smarty->assign('__URL__',__URL__);
         self::$smarty->display(APP."View".DIRECTORY_SEPARATOR.CONTROLLER.DIRECTORY_SEPARATOR.$view_file.VEXT);
 //        //start to render
 //        ob_start();
