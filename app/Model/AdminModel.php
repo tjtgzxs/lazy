@@ -22,7 +22,9 @@ class AdminModel extends BaseModel
     public function checkUser($username,$pass){
         $sql=" SELECT * FROM lazy_admin_user ".
              " WHERE user='{$username}' AND password='{$pass}' AND is_del=0";
+
         $smt=$this->db->query($sql);
+
 //        print_r($this->db->errorInfo());
         $result=$smt->fetchAll(\PDO::FETCH_ASSOC);
         if(!empty($result[0])){

@@ -69,5 +69,17 @@ class CommonFunction
         return['base'=>$base,'full'=>$full];
     }
 
+    public static function getSearch($content,$start=0,$limit=LIMIT){
+        $m=Db::connect();
+        $sql=" SELECT * FROM lazy_article ".
+             " WHERE (title LIKE '%{$content}%' OR content LIKE '%{$content}%') AND is_del=0 ".
+             " ORDER BY update_date DESC ".
+             " LIMIT {$start},{$limit}";
+        $stm=$m->query($sql);
+        $list=$stm->fetchAll(\PDO::FETCH_ASSOC);
+        return $list;
+    }
+
+
 
 }

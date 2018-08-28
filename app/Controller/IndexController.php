@@ -7,6 +7,7 @@
  */
 namespace Controller;
 use Lazy\BaseController;
+use Lazy\CommonFunction;
 use Model\IndexModel;
 use Predis\Client;
 
@@ -17,6 +18,9 @@ class IndexController extends BaseController
         parent::__construct();
     }
 
+    /**
+     * get Index Page
+     */
     public function IndexAction(){
          $m=new IndexModel();
          $banners=$m->getAll('lazy_banner','*',['is_del'=>0,'is_show'=>1],['order_by'=>'ASC']);
@@ -39,5 +43,18 @@ class IndexController extends BaseController
          $this->render();
 //       $this->render(['k'=>1]);
     }
+
+    public function searchAction(){
+        $page_limit=!empty($limit)? $limit:LIMIT;
+        $start=((isset($_GET['page'])?$_GET['page']:1)-1)*$page_limit;
+        $keyWorld=$_REQUEST['keywords'];
+        $list=CommonFunction::getSearch($keyWorld);
+        $this->assign('title','Search Result');
+        $this->assign('list',$list);
+        $this->assign('max_page',ceil(count($list)/$page_limit));
+        $this->assign('page',!empty($_GET['page'])?$_GET['page']:1);
+        $this->render('search_list');
+    }
+
 
 }

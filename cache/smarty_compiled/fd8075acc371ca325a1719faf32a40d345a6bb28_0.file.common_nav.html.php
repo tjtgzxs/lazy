@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-27 07:29:51
+/* Smarty version 3.1.32, created on 2018-08-28 07:12:19
   from 'D:\phpStudy\WWW\lazy\app\View\static\common_nav.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b83a86f8aea87_75684889',
+  'unifunc' => 'content_5b84f5d3dbf8a8_94319300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fd8075acc371ca325a1719faf32a40d345a6bb28' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\static\\common_nav.html',
-      1 => 1535354986,
+      1 => 1535440334,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b83a86f8aea87_75684889 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b84f5d3dbf8a8_94319300 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand mb-0 h1" href="<?php echo __URL__;?>
 "><img src="<?php echo __IMG__;?>
@@ -55,8 +55,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </li>
             <?php }?>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <form method="post" action="?r=Index/search" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" name="keywords" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
