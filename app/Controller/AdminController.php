@@ -66,24 +66,27 @@ class AdminController extends BaseController
         //get all category
         $result=$m->getAllCategory();
         //format all category
-        foreach ($result as $k=>$v){
-            if($v['parent_id']>0){
-                $id=0;
-                foreach ($result as $key=>$value){
-                    if($value['id']==$v['parent_id']) {
-                        $id=$key;
-                        break;
-                    }
-                }
-                $result[$id]['child'][$k]=$v;
-                unset($result[$k]);
-            }
-        }
+
         if(!empty($result)){
+            foreach ($result as $k=>$v){
+                if($v['parent_id']>0){
+                    $id=0;
+                    foreach ($result as $key=>$value){
+                        if($value['id']==$v['parent_id']) {
+                            $id=$key;
+                            break;
+                        }
+                    }
+                    $result[$id]['child'][$k]=$v;
+                    unset($result[$k]);
+                }
+            }
             $this->assign('list',$result);
             $this->assign('title','category list');
             $this->render('cate_list');
         }
+        $this->assign('title','category list');
+        $this->render('cate_list');
     }
 
     /**
@@ -104,7 +107,7 @@ class AdminController extends BaseController
             $this->assign('img_url',$info['img_url']);
             $this->assign('is_show',$info['is_show']);
         }
-        $this->render();
+        $this->render('addCategory');
     }
 
     /**
@@ -196,7 +199,7 @@ class AdminController extends BaseController
       }
       $this->assign('title','edit article');
       $this->assign('list',$list);
-      $this->render();
+      $this->render('addArticle');
     }
 
     /**
