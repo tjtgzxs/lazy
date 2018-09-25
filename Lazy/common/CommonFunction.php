@@ -7,6 +7,7 @@
  */
 namespace Lazy;
 use Extend\qiniu;
+use Predis\Client;
 
 class CommonFunction
 {
@@ -69,6 +70,13 @@ class CommonFunction
         return['base'=>$base,'full'=>$full];
     }
 
+    /**
+     * search function
+     * @param $content
+     * @param int $start
+     * @param int $limit
+     * @return array
+     */
     public static function getSearch($content,$start=0,$limit=LIMIT){
         $m=Db::connect();
         $sql=" SELECT * FROM lazy_article ".
@@ -78,6 +86,10 @@ class CommonFunction
         $stm=$m->query($sql);
         $list=$stm->fetchAll(\PDO::FETCH_ASSOC);
         return $list;
+    }
+
+    public static function redis(){
+        return new Client();
     }
 
 

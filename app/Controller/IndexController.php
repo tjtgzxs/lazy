@@ -26,8 +26,11 @@ class IndexController extends BaseController
     public function IndexAction()
     {
         $m = new IndexModel();
-        $banners = $m->getAll('lazy_banner', '*', ['is_del' => 0, 'is_show' => 1], ['order_by' => 'ASC']);
+
         $cates = $m->getAll('lazy_cate', '*', ['is_del' => 0, 'parent_id' => 0, 'is_show' => 1]);
+        if(empty($banners)){
+            $banners = $m->getAll('lazy_banner', '*', ['is_del' => 0, 'is_show' => 1], ['order_by' => 'ASC']);
+        }
         $arr = [];
         $cate_arr = [];
         foreach ($cates as $k => $v) {

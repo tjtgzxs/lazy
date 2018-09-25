@@ -42,7 +42,14 @@
         <button type="button" class="btn btn-primary" onclick="sub()">Submit</button>
     </form>
 </div>
-{include "static/footer.html"}
+{include "static/footer.html" special="admin_add_article"}
+<script type="text/javascript">
+    //禁用背景动画的 javascript
+    // document.getElementsByTagName("script")[7].src="";
+    // console.log(document.getElementsByTagName("script")[7])
+    // alert(document.getElementsByTagName("script")[0].text);
+    document.body.style.background = "ff0000";
+</script>
 <script type="text/javascript">
     var E = window.wangEditor
     var editor = new E('#editor')
