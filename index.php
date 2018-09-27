@@ -19,7 +19,6 @@ if(ENVIRONMENT=='development'){
 }
 
 $base=rtrim(str_replace('\\',DIRECTORY_SEPARATOR,__DIR__),DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
-
 define('BASE',$base);
 define('CACHE',BASE.'cache'.DIRECTORY_SEPARATOR);
 define('SYS',$base.'Lazy'.DIRECTORY_SEPARATOR);

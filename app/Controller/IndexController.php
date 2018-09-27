@@ -26,11 +26,24 @@ class IndexController extends BaseController
     public function IndexAction()
     {
         $m = new IndexModel();
-
-        $cates = $m->getAll('lazy_cate', '*', ['is_del' => 0, 'parent_id' => 0, 'is_show' => 1]);
-        if(empty($banners)){
-            $banners = $m->getAll('lazy_banner', '*', ['is_del' => 0, 'is_show' => 1], ['order_by' => 'ASC']);
+        $banners=[];
+        $banners_key=CommonFunction::redis()->keys("banners:*");
+        if(empty($banners_key)){
+            //cannot get redis key from redis
+            if(empty($banners)){
+                $banners = $m->getAll('lazy_banner', '*', ['is_del' => 0, 'is_show' => 1], ['order_by' => 'ASC']);
+            }
+            foreach ($banners as $k=>$v){
+                //write banners to redis
+                CommonFunction::redis()->hmset("banners:".$v['id'],$v);
+            }
+        }else{
+            foreach ($banners_key as $k=>$v){
+                array_push($banners,CommonFunction::redis()->hgetall($v));
+            }
         }
+        //get all top categories
+        $cates = $m->getAll('lazy_cate', '*', ['is_del' => 0, 'parent_id' => 0, 'is_show' => 1]);
         $arr = [];
         $cate_arr = [];
         foreach ($cates as $k => $v) {
@@ -47,7 +60,6 @@ class IndexController extends BaseController
         $this->assign('title', 'Welcome to Lazy Blog');
         $this->assign('banners', $banners);
         $this->render();
-//       $this->render(['k'=>1]);
     }
 
     public function searchAction()

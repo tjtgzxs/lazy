@@ -7,6 +7,7 @@
  * Time: 23:32
  */
 namespace Lazy;
+require COMMON.'common.php';
 require COMMON.'CommonFunction.php';
 require BASE.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 CommonFunction::format_config(require CONF.'config.php');
