@@ -43,17 +43,53 @@ class IndexController extends BaseController
             }
         }
         //get all top categories
-        $cates = $m->getAll('lazy_cate', '*', ['is_del' => 0, 'parent_id' => 0, 'is_show' => 1]);
+        $top_cates=CommonFunction::redis()->keys("top:*");
+        $cates=[];
+        if(empty($top_cates)){
+            $cates = $m->getAll('lazy_cate', '*', ['is_del' => 0, 'parent_id' => 0, 'is_show' => 1]);
+            foreach ($cates as $k=>$v){
+                CommonFunction::redis()->hmset("top:".$v['id'],$v);
+            }
+        }else{
+            foreach ($top_cates as $k=>$v){
+                array_push($cates,CommonFunction::redis()->hgetall($v));
+            }
+        }
+
         $arr = [];
         $cate_arr = [];
         foreach ($cates as $k => $v) {
             $arr['name'] = $v['name'];
             $arr['id'] = $v['id'];
             $arr['img_url'] = empty($v['img_url']) ? DEFAULT_FANG : $v['img_url'];
-            $sub_cate = $m->getAll('lazy_cate', '*', ['is_del' => 0, 'parent_id' => $v['id']]);
+            $sub_cate=[];
+            $sub_cate_key = CommonFunction::redis()->keys("cate_".$v['id'].":*");
+            if(empty($sub_cate_key)){
+                $sub_cate = $m->getAll('lazy_cate', '*', ['is_del' => 0, 'parent_id' => $v['id']]);
+                foreach ($sub_cate as $cate){
+                    CommonFunction::redis()->hmset('cate_'.$v['id'].":",$cate);
+                }
+            }else{
+                foreach ($sub_cate_key as $cate){
+                    array_push($sub_cate,$cate);
+                }
+            }
+
             $cat_id = array_column($sub_cate, 'id');
             array_push($cat_id, $v['id']);
-            $arr['article'] = $m->getAll('lazy_article', '*', ['is_del' => 0, 'cat_id' => $cat_id], ['update_date' => 'DESC'], 0, 5);
+            $arr['article']=[];
+            $article_key=CommonFunction::redis()->keys('articles_'.$v['id'].":*");
+            if(empty($article_key)){
+                $arr['article'] = $m->getAll('lazy_article', '*', ['is_del' => 0, 'cat_id' => $cat_id], ['update_date' => 'DESC'], 0, 5);
+                foreach ($arr['article'] as $article){
+                    CommonFunction::redis()->hmset('articles_'.$v['id'].":",$article);
+                }
+            }else{
+                foreach ($article_key as $article){
+                    array_push($arr['article'],$article);
+                }
+            }
+
             array_push($cate_arr, $arr);
         }
         $this->assign('arr', $cate_arr);
