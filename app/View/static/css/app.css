@@ -6,10 +6,14 @@ admin-add_banner.html
     height: 100px;
     margin: auto 20%;
 }
-
+.error{
+    color: red;
+    font-size: large;
+}
 /**
 addArticle.html
  */
 #editor-container{
     margin-top: 50px;
 }
+

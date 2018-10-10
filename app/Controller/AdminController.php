@@ -37,13 +37,12 @@ class AdminController extends BaseController
             $this->assign('title','manage');
             $this->render('index');
         }
-        if($_POST['user']==111){
-            $_SESSION['a_info']=['user'=>'admin','email'=>'email@email.com'];
-            $this->assign('info',$_SESSION['a_info']);
-            $this->assign('title','manage');
-            $this->render('index');
-        }
-
+//        if($_POST['user']==111){
+//            $_SESSION['a_info']=['user'=>'admin','email'=>'email@email.com'];
+//            $this->assign('info',$_SESSION['a_info']);
+//            $this->assign('title','manage');
+//            $this->render('index');
+//        }
         //confirm current time
         $now=date("Y-m-d H:i:s",time());
         //check user email and password
@@ -55,6 +54,10 @@ class AdminController extends BaseController
             $this->assign('info',$result);
             $this->assign('title','manage');
             $this->render('index');
+        }else{
+            $this->assign('errors',['wrong password or username']);
+            $this->assign('title','Log In');
+            $this->render('login');
         }
     }
 
@@ -130,6 +133,7 @@ class AdminController extends BaseController
              $result=$m->addCategory($arr);
 
         }
+        $this->delete();
         header('Location:?r=admin/CategoryList');
         die();
     }
@@ -144,6 +148,7 @@ class AdminController extends BaseController
         if(empty($result)){
             echo json_encode(['code'=>0,'msg'=>'delete fail']);die();
         }else{
+            $this->delete();
             echo json_encode(['code'=>1,'msg'=>'delete success']);die();
         }
     }
@@ -158,6 +163,7 @@ class AdminController extends BaseController
         if(empty($result)){
             echo json_encode(['code'=>0,'msg'=>'delete fail']);die();
         }else{
+            $this->delete();
             echo json_encode(['code'=>1,'msg'=>'delete success']);die();
         }
     }
@@ -238,6 +244,7 @@ class AdminController extends BaseController
 //            $result=$m->updateArticle($_POST['id'],$arr);
             $result=$m->updateTable('lazy_article',$_POST['id'],$arr);
         }
+        $this->delete();
         header('Location:?r=admin/getArticleList');
         die();
     }
@@ -284,6 +291,7 @@ class AdminController extends BaseController
         if(empty($result)){
             echo json_encode(['code'=>0,'msg'=>'delete fail']);die();
         }else{
+            $this->delete();
             echo json_encode(['code'=>1,'msg'=>'delete success']);die();
         }
     }
@@ -320,6 +328,7 @@ class AdminController extends BaseController
 
             $m->insert('lazy_banner',$arr);
         }
+        $this->delete();
         header('Location:?r=admin/getBannerList');
         die();
     }
@@ -333,11 +342,28 @@ class AdminController extends BaseController
         echo json_encode($up);die();
     }
 
+    /**
+     * upload Image
+     * @throws \Exception
+     */
     public function uploadImgAction(){
         $file=$_FILES[$_POST['fileName']];
         $up=CommonFunction::upload($file);
         echo json_encode($up);die();
     }
 
+    /**
+     * delete redis info
+     */
+    private function delete(){
+        $key1=CommonFunction::redis()->keys("banners:*");
+        $key2=CommonFunction::redis()->keys("top:*");
+        $key3=CommonFunction::redis()->keys("cate_*");
+        $key4=CommonFunction::redis()->keys("articles_*");
+        if(!empty($key1)) CommonFunction::redis()->del($key1);
+        if(!empty($key2)) CommonFunction::redis()->del($key2);
+        if(!empty($key3)) CommonFunction::redis()->del($key3);
+        if(!empty($key4)) CommonFunction::redis()->del($key4);
+    }
 
 }

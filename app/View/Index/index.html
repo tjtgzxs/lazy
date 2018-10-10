@@ -2,6 +2,7 @@
 <body>
 {include '../static/common_nav.html'}
         {if isset($banners)}
+        <!-- old banner -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 {foreach $banners as $k=>$v}
@@ -28,16 +29,23 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        <!-- new banner-->
+<!--<div class="banner">-->
+    <!--<ul>-->
+        <!--{foreach $banners as $k=>$v}-->
+        <!--<li style="background-image:"{$v.pic_url}"></li>-->
+        <!--{/foreach}-->
+    <!--</ul>-->
+<!--</div>-->
         {/if}
 <div class="container">
     {if isset($arr)}
+    <div class="" style="display: inline">
     {foreach $arr as $k=>$v}
-    <div class="card-group">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="{$v.img_url}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{$v.name}</h5>
-                <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
             </div>
             <ul class="list-group list-group-flush">
                 {if isset($v.article)}
@@ -50,10 +58,13 @@
                 <a href="#" class="card-link">More...</a>
             </div>
         </div>
-    </div>
     {/foreach}
+    </div>
     {/if}
 </div>
 {include '../static/footer.html'}
+<script type="text/javascript">
+        $('.banner').unslider();
+</script>
 </body>
 </html>

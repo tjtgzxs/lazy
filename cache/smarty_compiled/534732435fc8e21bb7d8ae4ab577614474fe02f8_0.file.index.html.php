@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-27 02:16:05
+/* Smarty version 3.1.32, created on 2018-10-08 09:43:51
   from 'D:\phpStudy\WWW\lazy\app\View\Index\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b835ee59c0182_06787962',
+  'unifunc' => 'content_5bbb26d7247987_37103009',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '534732435fc8e21bb7d8ae4ab577614474fe02f8' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\lazy\\app\\View\\Index\\index.html',
-      1 => 1535336162,
+      1 => 1538991827,
       2 => 'file',
     ),
   ),
@@ -23,13 +23,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../static/footer.html' => 1,
   ),
 ),false)) {
-function content_5b835ee59c0182_06787962 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5bbb26d7247987_37103009 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:../static/header.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0, false);
 ?>
 <body>
 <?php $_smarty_tpl->_subTemplateRender('file:../static/common_nav.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         <?php if (isset($_smarty_tpl->tpl_vars['banners']->value)) {?>
+        <!-- old banner -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <?php
@@ -73,22 +74,37 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        <!-- new banner-->
+<!--<div class="banner">-->
+    <!--<ul>-->
+        <!--<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['banners']->value, 'v', false, 'k');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
+?>-->
+        <!--<li style="background-image:"<?php echo $_smarty_tpl->tpl_vars['v']->value['pic_url'];?>
+"></li>-->
+        <!--<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>-->
+    <!--</ul>-->
+<!--</div>-->
         <?php }?>
 <div class="container">
     <?php if (isset($_smarty_tpl->tpl_vars['arr']->value)) {?>
+    <div class="" style="display: inline">
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['arr']->value, 'v', false, 'k');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['k']->value => $_smarty_tpl->tpl_vars['v']->value) {
 ?>
-    <div class="card-group">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="<?php echo $_smarty_tpl->tpl_vars['v']->value['img_url'];?>
 " alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
 </h5>
-                <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
             </div>
             <ul class="list-group list-group-flush">
                 <?php if (isset($_smarty_tpl->tpl_vars['v']->value['article'])) {?>
@@ -110,15 +126,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <a href="#" class="card-link">More...</a>
             </div>
         </div>
-    </div>
     <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+    </div>
     <?php }?>
 </div>
 <?php $_smarty_tpl->_subTemplateRender('file:../static/footer.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
+echo '<script'; ?>
+ type="text/javascript">
+        $('.banner').unslider();
+<?php echo '</script'; ?>
+>
 </body>
 </html><?php }
 }

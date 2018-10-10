@@ -1,6 +1,13 @@
 {include '../static/header.html' title="{$title}"}
 
 <body class="text-center">
+    {if isset($errors)}
+    <div class="container">
+        {foreach $errors as $k=>$v}
+        <p class="error" style="color: red">{$v}</p>
+        {/foreach}
+    </div>
+    {/if}
 <form action="?r=admin/judge" method="post">
     <div class="form-group">
         <label for="user">Email address</label>

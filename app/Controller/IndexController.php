@@ -82,11 +82,11 @@ class IndexController extends BaseController
             if(empty($article_key)){
                 $arr['article'] = $m->getAll('lazy_article', '*', ['is_del' => 0, 'cat_id' => $cat_id], ['update_date' => 'DESC'], 0, 5);
                 foreach ($arr['article'] as $article){
-                    CommonFunction::redis()->hmset('articles_'.$v['id'].":",$article);
+                    CommonFunction::redis()->hmset('articles_'.$v['id'].":".$article['id'],$article);
                 }
             }else{
                 foreach ($article_key as $article){
-                    array_push($arr['article'],$article);
+                    array_push($arr['article'],CommonFunction::redis()->hgetall($article));
                 }
             }
 
